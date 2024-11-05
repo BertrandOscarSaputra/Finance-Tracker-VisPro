@@ -37,6 +37,7 @@
             this.buttonlogin = new System.Windows.Forms.Button();
             this.buttonclear = new System.Windows.Forms.Button();
             this.buttonexit = new System.Windows.Forms.Button();
+            this.lblAdmin = new System.Windows.Forms.LinkLabel();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.SuspendLayout();
             // 
@@ -79,6 +80,7 @@
             this.txtUsername.Name = "txtUsername";
             this.txtUsername.Size = new System.Drawing.Size(256, 26);
             this.txtUsername.TabIndex = 3;
+            this.txtUsername.TextChanged += new System.EventHandler(this.txtUsername_TextChanged);
             // 
             // txtPassword
             // 
@@ -136,12 +138,25 @@
             this.buttonexit.UseVisualStyleBackColor = false;
             this.buttonexit.Click += new System.EventHandler(this.buttonexit_Click);
             // 
+            // lblAdmin
+            // 
+            this.lblAdmin.AutoSize = true;
+            this.lblAdmin.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblAdmin.Location = new System.Drawing.Point(397, 504);
+            this.lblAdmin.Name = "lblAdmin";
+            this.lblAdmin.Size = new System.Drawing.Size(86, 29);
+            this.lblAdmin.TabIndex = 8;
+            this.lblAdmin.TabStop = true;
+            this.lblAdmin.Text = "Admin";
+            this.lblAdmin.LinkClicked += new System.Windows.Forms.LinkLabelLinkClickedEventHandler(this.lblAdmin_LinkClicked);
+            // 
             // FrmLogin
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(900, 562);
             this.ControlBox = false;
+            this.Controls.Add(this.lblAdmin);
             this.Controls.Add(this.buttonexit);
             this.Controls.Add(this.buttonclear);
             this.Controls.Add(this.buttonlogin);
@@ -173,6 +188,7 @@
         private System.Windows.Forms.Button buttonlogin;
         private System.Windows.Forms.Button buttonclear;
         private System.Windows.Forms.Button buttonexit;
+        private System.Windows.Forms.LinkLabel lblAdmin;
     }
 }
 
