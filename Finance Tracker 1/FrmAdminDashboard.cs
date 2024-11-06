@@ -50,6 +50,11 @@ namespace Finance_Tracker_1
                     {
                         MessageBox.Show("Update Data Suksess ...");
                         FrmAdminDashboard_Load(null, null);
+                        btnAdd.Enabled = true;
+                        btnUpdate.Enabled = true;
+                        btnDelete.Enabled = true;
+                        btnSearch.Enabled = true;
+                        btnClear.Enabled = true;
                     }
                     else
                     {
@@ -166,6 +171,7 @@ namespace Finance_Tracker_1
             try
             {
                 FrmAdminDashboard_Load(null, null);
+                btnClear.Enabled = true;
             }
             catch (Exception ex)
             {
@@ -209,6 +215,21 @@ namespace Finance_Tracker_1
             }
         }
 
+        private void txtEmail_TextChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void txtUsername_TextChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void dataGridView1_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        {
+
+        }
+
         private void FrmAdminDashboard_Load(object sender, EventArgs e)
         {
             try
@@ -237,11 +258,13 @@ namespace Finance_Tracker_1
                 txtUsername.Clear();
                 txtPassword.Clear();
                 txtId.Focus();
+                txtEmail.Clear();
                 btnUpdate.Enabled = false;
                 btnDelete.Enabled = false;
                 btnClear.Enabled = false;
                 btnAdd.Enabled = true;
                 btnSearch.Enabled = true;
+                txtUsername.Enabled = true;
 
             }
             catch (Exception ex)
