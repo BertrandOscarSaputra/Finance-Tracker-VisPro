@@ -10,10 +10,13 @@ using System.Windows.Forms;
 
 namespace Finance_Tracker_1
 {
+   
+
     public partial class Dashboard : Form
     {
-        public Dashboard()
+        public Dashboard(int userId)
         {
+            
             InitializeComponent();
         }
 
@@ -31,7 +34,7 @@ namespace Finance_Tracker_1
 
         private void button_transactionhistory_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
         {
-            History history = new History();
+            FrmHistory history = new FrmHistory();
             history.Show();
         }
 

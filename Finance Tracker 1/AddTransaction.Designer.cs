@@ -31,17 +31,15 @@
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(AddTransaction));
             this.labeladdtransaction = new System.Windows.Forms.Label();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
-            this.textBox1 = new System.Windows.Forms.TextBox();
-            this.dateTimePicker1 = new System.Windows.Forms.DateTimePicker();
-            this.textBox2 = new System.Windows.Forms.TextBox();
+            this.txtType = new System.Windows.Forms.TextBox();
+            this.dateTransaction = new System.Windows.Forms.DateTimePicker();
+            this.txtCategory = new System.Windows.Forms.TextBox();
             this.label1 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
-            this.richTextBox1 = new System.Windows.Forms.RichTextBox();
-            this.textBox3 = new System.Windows.Forms.TextBox();
+            this.richDesc = new System.Windows.Forms.RichTextBox();
+            this.txtAmount = new System.Windows.Forms.TextBox();
             this.label4 = new System.Windows.Forms.Label();
-            this.label5 = new System.Windows.Forms.Label();
-            this.textBox4 = new System.Windows.Forms.TextBox();
             this.label6 = new System.Windows.Forms.Label();
             this.label7 = new System.Windows.Forms.Label();
             this.buttonEnter = new System.Windows.Forms.Button();
@@ -70,30 +68,31 @@
             this.pictureBox1.TabIndex = 9;
             this.pictureBox1.TabStop = false;
             // 
-            // textBox1
+            // txtType
             // 
-            this.textBox1.Location = new System.Drawing.Point(122, 288);
-            this.textBox1.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
-            this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(224, 26);
-            this.textBox1.TabIndex = 10;
-            this.textBox1.TextChanged += new System.EventHandler(this.textBox1_TextChanged);
+            this.txtType.Location = new System.Drawing.Point(122, 288);
+            this.txtType.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            this.txtType.Name = "txtType";
+            this.txtType.Size = new System.Drawing.Size(224, 26);
+            this.txtType.TabIndex = 10;
+            this.txtType.TextChanged += new System.EventHandler(this.textBox1_TextChanged);
             // 
-            // dateTimePicker1
+            // dateTransaction
             // 
-            this.dateTimePicker1.Location = new System.Drawing.Point(122, 192);
-            this.dateTimePicker1.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
-            this.dateTimePicker1.Name = "dateTimePicker1";
-            this.dateTimePicker1.Size = new System.Drawing.Size(224, 26);
-            this.dateTimePicker1.TabIndex = 11;
+            this.dateTransaction.Location = new System.Drawing.Point(122, 192);
+            this.dateTransaction.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            this.dateTransaction.Name = "dateTransaction";
+            this.dateTransaction.Size = new System.Drawing.Size(224, 26);
+            this.dateTransaction.TabIndex = 11;
+            this.dateTransaction.ValueChanged += new System.EventHandler(this.dateTimePicker1_ValueChanged);
             // 
-            // textBox2
+            // txtCategory
             // 
-            this.textBox2.Location = new System.Drawing.Point(122, 382);
-            this.textBox2.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
-            this.textBox2.Name = "textBox2";
-            this.textBox2.Size = new System.Drawing.Size(224, 26);
-            this.textBox2.TabIndex = 12;
+            this.txtCategory.Location = new System.Drawing.Point(122, 382);
+            this.txtCategory.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            this.txtCategory.Name = "txtCategory";
+            this.txtCategory.Size = new System.Drawing.Size(224, 26);
+            this.txtCategory.TabIndex = 12;
             // 
             // label1
             // 
@@ -123,22 +122,22 @@
             this.label3.Text = "Category";
             this.label3.Click += new System.EventHandler(this.label3_Click);
             // 
-            // richTextBox1
+            // richDesc
             // 
-            this.richTextBox1.Location = new System.Drawing.Point(503, 359);
-            this.richTextBox1.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
-            this.richTextBox1.Name = "richTextBox1";
-            this.richTextBox1.Size = new System.Drawing.Size(285, 102);
-            this.richTextBox1.TabIndex = 18;
-            this.richTextBox1.Text = "";
+            this.richDesc.Location = new System.Drawing.Point(504, 306);
+            this.richDesc.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            this.richDesc.Name = "richDesc";
+            this.richDesc.Size = new System.Drawing.Size(285, 102);
+            this.richDesc.TabIndex = 18;
+            this.richDesc.Text = "";
             // 
-            // textBox3
+            // txtAmount
             // 
-            this.textBox3.Location = new System.Drawing.Point(503, 192);
-            this.textBox3.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
-            this.textBox3.Name = "textBox3";
-            this.textBox3.Size = new System.Drawing.Size(224, 26);
-            this.textBox3.TabIndex = 16;
+            this.txtAmount.Location = new System.Drawing.Point(503, 192);
+            this.txtAmount.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            this.txtAmount.Name = "txtAmount";
+            this.txtAmount.Size = new System.Drawing.Size(224, 26);
+            this.txtAmount.TabIndex = 16;
             // 
             // label4
             // 
@@ -149,31 +148,15 @@
             this.label4.TabIndex = 17;
             this.label4.Text = "Amount";
             // 
-            // label5
-            // 
-            this.label5.AutoSize = true;
-            this.label5.Location = new System.Drawing.Point(500, 251);
-            this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(129, 20);
-            this.label5.TabIndex = 20;
-            this.label5.Text = "Payment Method";
-            // 
-            // textBox4
-            // 
-            this.textBox4.Location = new System.Drawing.Point(503, 275);
-            this.textBox4.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
-            this.textBox4.Name = "textBox4";
-            this.textBox4.Size = new System.Drawing.Size(224, 26);
-            this.textBox4.TabIndex = 19;
-            // 
             // label6
             // 
             this.label6.AutoSize = true;
-            this.label6.Location = new System.Drawing.Point(500, 335);
+            this.label6.Location = new System.Drawing.Point(499, 264);
             this.label6.Name = "label6";
             this.label6.Size = new System.Drawing.Size(89, 20);
             this.label6.TabIndex = 21;
             this.label6.Text = "Description";
+            this.label6.Click += new System.EventHandler(this.label6_Click);
             // 
             // label7
             // 
@@ -222,17 +205,15 @@
             this.Controls.Add(this.buttonEnter);
             this.Controls.Add(this.label7);
             this.Controls.Add(this.label6);
-            this.Controls.Add(this.label5);
-            this.Controls.Add(this.textBox4);
-            this.Controls.Add(this.richTextBox1);
+            this.Controls.Add(this.richDesc);
             this.Controls.Add(this.label4);
-            this.Controls.Add(this.textBox3);
+            this.Controls.Add(this.txtAmount);
             this.Controls.Add(this.label3);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.label1);
-            this.Controls.Add(this.textBox2);
-            this.Controls.Add(this.dateTimePicker1);
-            this.Controls.Add(this.textBox1);
+            this.Controls.Add(this.txtCategory);
+            this.Controls.Add(this.dateTransaction);
+            this.Controls.Add(this.txtType);
             this.Controls.Add(this.labeladdtransaction);
             this.Controls.Add(this.pictureBox1);
             this.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
@@ -252,17 +233,15 @@
 
         private System.Windows.Forms.Label labeladdtransaction;
         private System.Windows.Forms.PictureBox pictureBox1;
-        private System.Windows.Forms.TextBox textBox1;
-        private System.Windows.Forms.DateTimePicker dateTimePicker1;
-        private System.Windows.Forms.TextBox textBox2;
+        private System.Windows.Forms.TextBox txtType;
+        private System.Windows.Forms.DateTimePicker dateTransaction;
+        private System.Windows.Forms.TextBox txtCategory;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Label label3;
-        private System.Windows.Forms.RichTextBox richTextBox1;
-        private System.Windows.Forms.TextBox textBox3;
+        private System.Windows.Forms.RichTextBox richDesc;
+        private System.Windows.Forms.TextBox txtAmount;
         private System.Windows.Forms.Label label4;
-        private System.Windows.Forms.Label label5;
-        private System.Windows.Forms.TextBox textBox4;
         private System.Windows.Forms.Label label6;
         private System.Windows.Forms.Label label7;
         private System.Windows.Forms.Button buttonEnter;
