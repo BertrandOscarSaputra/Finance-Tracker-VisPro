@@ -45,7 +45,9 @@ namespace Finance_Tracker_1
                     string sandi = ds.Tables[0].Rows[0]["password"].ToString();
                     if (sandi == txtPassword.Text)
                     {
-                        Dashboard dashboard = new Dashboard();
+
+                        int userId = Convert.ToInt32(ds.Tables[0].Rows[0]["user_id"]);
+                        Dashboard dashboard = new Dashboard(userId);
                         dashboard.Show();
                         this.Hide();
                     }

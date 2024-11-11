@@ -23,12 +23,13 @@ namespace Finance_Tracker_1
         private DataSet ds = new DataSet();
         private string alamat, query;
 
-        
-        public AddTransaction()
+        private int userId;
+
+        public AddTransaction(int userId)
         {
             alamat = "server=localhost; database=finance_tracker; username=root; password=;";
             koneksi = new MySqlConnection(alamat);
-            
+            this.userId = userId;
             InitializeComponent();
         }
 
@@ -53,8 +54,15 @@ namespace Finance_Tracker_1
             {
                 if (txtType.Text != "" && txtCategory.Text != "" && txtAmount.Text != "")
                 {
-                    int userId = 1;
-                    query = string.Format("INSERT into transactions  values ('{0}','{1}','{2}','{3}','{4}','{5}');",null,userId, txtType.Text, txtAmount, txtCategory.Text, dateTransaction.Value.ToString("yyyy-MM-dd"));
+                    int amount;
+                    if (!int.TryParse(txtAmount.Text, out amount))
+                    {
+                        MessageBox.Show("Amount must be a valid integer.");
+                        return;
+                    }
+
+                    
+                    query = string.Format("INSERT into transactions  values ('{0}','{1}','{2}','{3}','{4}','{5}');",null,this.userId, txtType.Text, amount, txtCategory.Text, dateTransaction.Value.ToString("yyyy-MM-dd"));
 
                     koneksi.Open();
                     perintah = new MySqlCommand(query, koneksi);
@@ -63,8 +71,7 @@ namespace Finance_Tracker_1
                     koneksi.Close();
                     if (res == 1)
                     {
-
-                        MessageBox.Show("Transaksi Suksess ...");
+                        MessageBox.Show("Transaksi Sukses ...");
                         AddTransaction_Load(null, null);
                     }
                     else

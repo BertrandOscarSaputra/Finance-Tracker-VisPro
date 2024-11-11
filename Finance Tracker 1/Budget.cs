@@ -21,10 +21,14 @@ namespace Finance_Tracker_1
 
         private DataSet ds = new DataSet();
         private string alamat, query;
-        public Budget()
+
+        private int userId;
+
+        public Budget(int userId)
         {
             alamat = "server=localhost; database=finance_tracker; username=root; password=;";
             koneksi = new MySqlConnection(alamat);
+            this.userId = userId;
             InitializeComponent();
         }
 
@@ -43,8 +47,15 @@ namespace Finance_Tracker_1
             {
                 if (txtAmount.Text != "" && dateStartBudget.Text != "" && txtCategory.Text != "")
                 {
-                    int user_id = 1;
-                    query = string.Format("INSERT into budgets  values ('{0}','{1}','{2}','{3}','{4}','{5}');", null, user_id, txtCategory.Text, txtAmount.Text, dateStartBudget.Value.ToString("yyyy-MM-dd"), dateEndBudget.Value.ToString("yyyy-MM-dd"));
+                    int amount;
+                    if (!int.TryParse(txtAmount.Text, out amount))
+                    {
+                        MessageBox.Show("Amount must be a valid integer.");
+                        return;
+                    }
+
+                    
+                    query = string.Format("INSERT into budgets  values ('{0}','{1}','{2}','{3}','{4}','{5}');", null, this.userId, txtCategory.Text, amount, dateStartBudget.Value.ToString("yyyy-MM-dd"), dateEndBudget.Value.ToString("yyyy-MM-dd"));
 
 
                     koneksi.Open();

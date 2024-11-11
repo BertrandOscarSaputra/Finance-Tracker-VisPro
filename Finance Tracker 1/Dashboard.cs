@@ -21,10 +21,12 @@ namespace Finance_Tracker_1
         private DataSet ds = new DataSet();
         private string alamat, query;
 
-        public Dashboard()
+        private int currentUserId;
+        public Dashboard(int userId)
         {
             alamat = "server=localhost; database=finance_tracker; username=root; password=;";
             koneksi = new MySqlConnection(alamat);
+            this.currentUserId = userId;
             InitializeComponent();
         }
 
@@ -35,7 +37,7 @@ namespace Finance_Tracker_1
 
         private void button_addtransaction_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
         {
-            AddTransaction addtransaction = new AddTransaction();
+            AddTransaction addtransaction = new AddTransaction(currentUserId);
             addtransaction.Show();
             
         }
@@ -48,7 +50,7 @@ namespace Finance_Tracker_1
 
         private void linkLabel1_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
         {
-            Budget budget = new Budget();
+            Budget budget = new Budget(currentUserId);
             budget.Show();
         }
 
