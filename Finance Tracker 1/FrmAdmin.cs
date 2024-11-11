@@ -38,6 +38,18 @@ namespace Finance_Tracker_1
 
         }
 
+        private void txtPasswordAdmin_TextChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void button1_Click(object sender, EventArgs e)
+        {
+            FrmLogin login = new FrmLogin();
+            login.Show();
+            this.Hide();
+        }
+
         private void btnLoginAdmin_Click(object sender, EventArgs e)
         {
             try

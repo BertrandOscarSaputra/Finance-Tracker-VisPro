@@ -186,7 +186,7 @@ namespace Finance_Tracker_1
                 if (txtUsername.Text != "" && txtPassword.Text != "" && txtEmail.Text != "")
                 {
 
-                    query = string.Format("insert into users  values ('{0}','{1}','{2}','{3}');", txtId.Text, txtUsername.Text, txtPassword.Text, txtEmail.Text);
+                    query = string.Format("insert into users  values ('{0}','{1}','{2}','{3}','{4}');", txtId.Text, txtUsername.Text, txtPassword.Text, txtEmail.Text,null);
 
 
                     koneksi.Open();

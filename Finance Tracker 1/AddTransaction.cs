@@ -64,6 +64,7 @@ namespace Finance_Tracker_1
                     koneksi.Close();
                     if (res == 1)
                     {
+
                         MessageBox.Show("Transaksi Suksess ...");
                         AddTransaction_Load(null, null);
                     }

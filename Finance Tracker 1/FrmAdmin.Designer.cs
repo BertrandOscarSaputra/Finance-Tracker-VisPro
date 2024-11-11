@@ -35,6 +35,7 @@
             this.btnLoginAdmin = new System.Windows.Forms.Button();
             this.lblUserAdmin = new System.Windows.Forms.Label();
             this.txtUserAdmin = new System.Windows.Forms.TextBox();
+            this.button1 = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.SuspendLayout();
             // 
@@ -60,6 +61,7 @@
             this.txtPasswordAdmin.PasswordChar = '*';
             this.txtPasswordAdmin.Size = new System.Drawing.Size(316, 26);
             this.txtPasswordAdmin.TabIndex = 5;
+            this.txtPasswordAdmin.TextChanged += new System.EventHandler(this.txtPasswordAdmin_TextChanged);
             // 
             // lblPasswordAdmin
             // 
@@ -76,9 +78,10 @@
             // btnLoginAdmin
             // 
             this.btnLoginAdmin.BackColor = System.Drawing.Color.CadetBlue;
-            this.btnLoginAdmin.Location = new System.Drawing.Point(354, 304);
+            this.btnLoginAdmin.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
+            this.btnLoginAdmin.Location = new System.Drawing.Point(289, 299);
             this.btnLoginAdmin.Name = "btnLoginAdmin";
-            this.btnLoginAdmin.Size = new System.Drawing.Size(196, 67);
+            this.btnLoginAdmin.Size = new System.Drawing.Size(134, 54);
             this.btnLoginAdmin.TabIndex = 7;
             this.btnLoginAdmin.Text = "LogIn";
             this.btnLoginAdmin.UseVisualStyleBackColor = false;
@@ -106,11 +109,24 @@
             this.txtUserAdmin.Size = new System.Drawing.Size(316, 26);
             this.txtUserAdmin.TabIndex = 9;
             // 
+            // button1
+            // 
+            this.button1.BackColor = System.Drawing.Color.Tomato;
+            this.button1.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
+            this.button1.Location = new System.Drawing.Point(473, 299);
+            this.button1.Name = "button1";
+            this.button1.Size = new System.Drawing.Size(141, 54);
+            this.button1.TabIndex = 10;
+            this.button1.Text = "Cancel";
+            this.button1.UseVisualStyleBackColor = false;
+            this.button1.Click += new System.EventHandler(this.button1_Click);
+            // 
             // FrmAdmin
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(678, 398);
+            this.Controls.Add(this.button1);
             this.Controls.Add(this.txtUserAdmin);
             this.Controls.Add(this.lblUserAdmin);
             this.Controls.Add(this.btnLoginAdmin);
@@ -123,6 +139,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
+
         }
 
         #endregion
@@ -133,5 +150,6 @@
         private System.Windows.Forms.Button btnLoginAdmin;
         private System.Windows.Forms.Label lblUserAdmin;
         private System.Windows.Forms.TextBox txtUserAdmin;
+        private System.Windows.Forms.Button button1;
     }
 }
