@@ -13,6 +13,7 @@ using MySql.Data.MySqlClient;
 
 namespace Finance_Tracker_1
 {
+    
     public partial class AddTransaction : Form
     {
         private MySqlConnection koneksi;
@@ -21,11 +22,13 @@ namespace Finance_Tracker_1
 
         private DataSet ds = new DataSet();
         private string alamat, query;
+
+        
         public AddTransaction()
         {
             alamat = "server=localhost; database=finance_tracker; username=root; password=;";
             koneksi = new MySqlConnection(alamat);
-
+            
             InitializeComponent();
         }
 
@@ -50,8 +53,8 @@ namespace Finance_Tracker_1
             {
                 if (txtType.Text != "" && txtCategory.Text != "" && txtAmount.Text != "")
                 {
-                    
-                    query = string.Format("insert into transactions  values ('{0}','{1}','{2}','{3}','{4}');", txtType, txtAmount, txtCategory.Text, dateTransaction.Value.ToString("yyyy-MM-dd"));
+                    int userId = 1;
+                    query = string.Format("INSERT into transactions  values ('{0}','{1}','{2}','{3}','{4}','{5}');",null,userId, txtType.Text, txtAmount, txtCategory.Text, dateTransaction.Value.ToString("yyyy-MM-dd"));
 
 
                     koneksi.Open();

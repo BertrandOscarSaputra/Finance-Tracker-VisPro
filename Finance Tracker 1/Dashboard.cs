@@ -10,13 +10,12 @@ using System.Windows.Forms;
 
 namespace Finance_Tracker_1
 {
-   
 
     public partial class Dashboard : Form
     {
-        public Dashboard(int userId)
+        
+        public Dashboard()
         {
-            
             InitializeComponent();
         }
 

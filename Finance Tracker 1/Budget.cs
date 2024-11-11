@@ -7,13 +7,24 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using MySql.Data.MySqlClient;
+
 
 namespace Finance_Tracker_1
 {
+
     public partial class Budget : Form
     {
+        private MySqlConnection koneksi;
+        private MySqlDataAdapter adapter;
+        private MySqlCommand perintah;
+
+        private DataSet ds = new DataSet();
+        private string alamat, query;
         public Budget()
         {
+            alamat = "server=localhost; database=finance_tracker; username=root; password=;";
+            koneksi = new MySqlConnection(alamat);
             InitializeComponent();
         }
 
@@ -28,7 +39,54 @@ namespace Finance_Tracker_1
 
         private void buttonSetBudget_Click(object sender, EventArgs e)
         {
-            Application.Exit();
+            try
+            {
+                if (txtAmount.Text != "" && dateStartBudget.Text != "" && txtCategory.Text != "")
+                {
+                    int user_id = 1;
+                    query = string.Format("INSERT into budgets  values ('{0}','{1}','{2}','{3}','{4}','{5}');", null, user_id, txtCategory.Text, txtAmount.Text, dateStartBudget.Value.ToString("yyyy-MM-dd"), dateEndBudget.Value.ToString("yyyy-MM-dd"));
+
+
+                    koneksi.Open();
+                    perintah = new MySqlCommand(query, koneksi);
+                    adapter = new MySqlDataAdapter(perintah);
+                    int res = perintah.ExecuteNonQuery();
+                    koneksi.Close();
+                    if (res == 1)
+                    {
+                        MessageBox.Show("Insert budget sukses ...");
+                        Budget_Load(null,null);
+                        
+                    }
+                    else
+                    {
+                        MessageBox.Show("Gagal insert budget . . . ");
+                    }
+                }
+                else
+                {
+                    MessageBox.Show("Data Tidak lengkap !!");
+                }
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.ToString());
+            }
+        }
+
+        private void textBox1_TextChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void dateStartBudget_ValueChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void Budget_Load(object sender, EventArgs e)
+        {
+
         }
     }
 }

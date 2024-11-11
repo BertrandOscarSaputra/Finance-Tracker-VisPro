@@ -38,8 +38,12 @@
             this.richTextBox1 = new System.Windows.Forms.RichTextBox();
             this.label2 = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
-            this.dateTimePicker1 = new System.Windows.Forms.DateTimePicker();
+            this.dateStartBudget = new System.Windows.Forms.DateTimePicker();
+            this.txtAmount = new System.Windows.Forms.TextBox();
             this.textBox1 = new System.Windows.Forms.TextBox();
+            this.txtCategory = new System.Windows.Forms.Label();
+            this.dateEndBudget = new System.Windows.Forms.DateTimePicker();
+            this.label3 = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.SuspendLayout();
             // 
@@ -96,7 +100,7 @@
             this.label7.AutoSize = true;
             this.label7.BackColor = System.Drawing.Color.Transparent;
             this.label7.Font = new System.Drawing.Font("Microsoft Sans Serif", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label7.Location = new System.Drawing.Point(458, 122);
+            this.label7.Location = new System.Drawing.Point(570, 55);
             this.label7.Name = "label7";
             this.label7.Size = new System.Drawing.Size(200, 32);
             this.label7.TabIndex = 39;
@@ -105,7 +109,7 @@
             // label6
             // 
             this.label6.AutoSize = true;
-            this.label6.Location = new System.Drawing.Point(138, 304);
+            this.label6.Location = new System.Drawing.Point(540, 106);
             this.label6.Name = "label6";
             this.label6.Size = new System.Drawing.Size(89, 20);
             this.label6.TabIndex = 38;
@@ -113,7 +117,7 @@
             // 
             // richTextBox1
             // 
-            this.richTextBox1.Location = new System.Drawing.Point(142, 328);
+            this.richTextBox1.Location = new System.Drawing.Point(544, 144);
             this.richTextBox1.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.richTextBox1.Name = "richTextBox1";
             this.richTextBox1.Size = new System.Drawing.Size(285, 102);
@@ -134,25 +138,61 @@
             this.label1.AutoSize = true;
             this.label1.Location = new System.Drawing.Point(138, 192);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(44, 20);
+            this.label1.Size = new System.Drawing.Size(88, 20);
             this.label1.TabIndex = 35;
-            this.label1.Text = "Date";
+            this.label1.Text = "Start_Date";
             // 
-            // dateTimePicker1
+            // dateStartBudget
             // 
-            this.dateTimePicker1.Location = new System.Drawing.Point(138, 220);
-            this.dateTimePicker1.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
-            this.dateTimePicker1.Name = "dateTimePicker1";
-            this.dateTimePicker1.Size = new System.Drawing.Size(224, 26);
-            this.dateTimePicker1.TabIndex = 34;
+            this.dateStartBudget.Location = new System.Drawing.Point(138, 220);
+            this.dateStartBudget.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            this.dateStartBudget.Name = "dateStartBudget";
+            this.dateStartBudget.Size = new System.Drawing.Size(224, 26);
+            this.dateStartBudget.TabIndex = 34;
+            this.dateStartBudget.ValueChanged += new System.EventHandler(this.dateStartBudget_ValueChanged);
+            // 
+            // txtAmount
+            // 
+            this.txtAmount.Location = new System.Drawing.Point(138, 130);
+            this.txtAmount.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            this.txtAmount.Name = "txtAmount";
+            this.txtAmount.Size = new System.Drawing.Size(224, 26);
+            this.txtAmount.TabIndex = 33;
             // 
             // textBox1
             // 
-            this.textBox1.Location = new System.Drawing.Point(138, 130);
+            this.textBox1.Location = new System.Drawing.Point(142, 373);
             this.textBox1.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.textBox1.Name = "textBox1";
             this.textBox1.Size = new System.Drawing.Size(224, 26);
-            this.textBox1.TabIndex = 33;
+            this.textBox1.TabIndex = 42;
+            this.textBox1.TextChanged += new System.EventHandler(this.textBox1_TextChanged);
+            // 
+            // txtCategory
+            // 
+            this.txtCategory.AutoSize = true;
+            this.txtCategory.Location = new System.Drawing.Point(138, 339);
+            this.txtCategory.Name = "txtCategory";
+            this.txtCategory.Size = new System.Drawing.Size(73, 20);
+            this.txtCategory.TabIndex = 43;
+            this.txtCategory.Text = "Category";
+            // 
+            // dateEndBudget
+            // 
+            this.dateEndBudget.Location = new System.Drawing.Point(142, 295);
+            this.dateEndBudget.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            this.dateEndBudget.Name = "dateEndBudget";
+            this.dateEndBudget.Size = new System.Drawing.Size(224, 26);
+            this.dateEndBudget.TabIndex = 44;
+            // 
+            // label3
+            // 
+            this.label3.AutoSize = true;
+            this.label3.Location = new System.Drawing.Point(138, 262);
+            this.label3.Name = "label3";
+            this.label3.Size = new System.Drawing.Size(82, 20);
+            this.label3.TabIndex = 45;
+            this.label3.Text = "End_Date";
             // 
             // Budget
             // 
@@ -160,6 +200,10 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(900, 562);
             this.ControlBox = false;
+            this.Controls.Add(this.label3);
+            this.Controls.Add(this.dateEndBudget);
+            this.Controls.Add(this.txtCategory);
+            this.Controls.Add(this.textBox1);
             this.Controls.Add(this.buttonBack);
             this.Controls.Add(this.buttonSetBudget);
             this.Controls.Add(this.label7);
@@ -167,8 +211,8 @@
             this.Controls.Add(this.richTextBox1);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.label1);
-            this.Controls.Add(this.dateTimePicker1);
-            this.Controls.Add(this.textBox1);
+            this.Controls.Add(this.dateStartBudget);
+            this.Controls.Add(this.txtAmount);
             this.Controls.Add(this.labeladdtransaction);
             this.Controls.Add(this.pictureBox1);
             this.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
@@ -177,6 +221,7 @@
             this.Name = "Budget";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Budget";
+            this.Load += new System.EventHandler(this.Budget_Load);
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
@@ -193,7 +238,11 @@
         private System.Windows.Forms.RichTextBox richTextBox1;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Label label1;
-        private System.Windows.Forms.DateTimePicker dateTimePicker1;
+        private System.Windows.Forms.DateTimePicker dateStartBudget;
+        private System.Windows.Forms.TextBox txtAmount;
         private System.Windows.Forms.TextBox textBox1;
+        private System.Windows.Forms.Label txtCategory;
+        private System.Windows.Forms.DateTimePicker dateEndBudget;
+        private System.Windows.Forms.Label label3;
     }
 }
