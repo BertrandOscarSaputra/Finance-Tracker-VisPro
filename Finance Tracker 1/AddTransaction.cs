@@ -56,7 +56,6 @@ namespace Finance_Tracker_1
                     int userId = 1;
                     query = string.Format("INSERT into transactions  values ('{0}','{1}','{2}','{3}','{4}','{5}');",null,userId, txtType.Text, txtAmount, txtCategory.Text, dateTransaction.Value.ToString("yyyy-MM-dd"));
 
-
                     koneksi.Open();
                     perintah = new MySqlCommand(query, koneksi);
                     adapter = new MySqlDataAdapter(perintah);
