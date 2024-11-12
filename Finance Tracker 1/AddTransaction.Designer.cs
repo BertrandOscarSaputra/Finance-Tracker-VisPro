@@ -160,9 +160,10 @@
             // 
             // buttonEnter
             // 
-            this.buttonEnter.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(255)))), ((int)(((byte)(192)))));
+            this.buttonEnter.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(128)))), ((int)(((byte)(255)))), ((int)(((byte)(128)))));
             this.buttonEnter.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.buttonEnter.Location = new System.Drawing.Point(281, 489);
+            this.buttonEnter.Font = new System.Drawing.Font("Microsoft Sans Serif", 8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.buttonEnter.Location = new System.Drawing.Point(298, 489);
             this.buttonEnter.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.buttonEnter.Name = "buttonEnter";
             this.buttonEnter.Size = new System.Drawing.Size(91, 49);
@@ -175,6 +176,7 @@
             // 
             this.buttonBack.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(192)))), ((int)(((byte)(192)))));
             this.buttonBack.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.buttonBack.Font = new System.Drawing.Font("Microsoft Sans Serif", 8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.buttonBack.Location = new System.Drawing.Point(497, 489);
             this.buttonBack.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.buttonBack.Name = "buttonBack";

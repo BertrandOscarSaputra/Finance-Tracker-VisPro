@@ -43,6 +43,8 @@
             this.txtCategory = new System.Windows.Forms.Label();
             this.dateEndBudget = new System.Windows.Forms.DateTimePicker();
             this.label3 = new System.Windows.Forms.Label();
+            this.label4 = new System.Windows.Forms.Label();
+            this.txtName = new System.Windows.Forms.TextBox();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.SuspendLayout();
             // 
@@ -72,7 +74,8 @@
             // 
             this.buttonBack.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(192)))), ((int)(((byte)(192)))));
             this.buttonBack.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.buttonBack.Location = new System.Drawing.Point(336, 458);
+            this.buttonBack.Font = new System.Drawing.Font("Microsoft Sans Serif", 8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.buttonBack.Location = new System.Drawing.Point(343, 442);
             this.buttonBack.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.buttonBack.Name = "buttonBack";
             this.buttonBack.Size = new System.Drawing.Size(91, 49);
@@ -83,9 +86,10 @@
             // 
             // buttonSetBudget
             // 
-            this.buttonSetBudget.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(255)))), ((int)(((byte)(192)))));
+            this.buttonSetBudget.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(128)))), ((int)(((byte)(255)))), ((int)(((byte)(128)))));
             this.buttonSetBudget.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.buttonSetBudget.Location = new System.Drawing.Point(142, 458);
+            this.buttonSetBudget.Font = new System.Drawing.Font("Microsoft Sans Serif", 8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.buttonSetBudget.Location = new System.Drawing.Point(139, 442);
             this.buttonSetBudget.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.buttonSetBudget.Name = "buttonSetBudget";
             this.buttonSetBudget.Size = new System.Drawing.Size(91, 49);
@@ -97,7 +101,7 @@
             // label6
             // 
             this.label6.AutoSize = true;
-            this.label6.Location = new System.Drawing.Point(540, 106);
+            this.label6.Location = new System.Drawing.Point(551, 255);
             this.label6.Name = "label6";
             this.label6.Size = new System.Drawing.Size(89, 20);
             this.label6.TabIndex = 38;
@@ -105,17 +109,18 @@
             // 
             // richDesc1
             // 
-            this.richDesc1.Location = new System.Drawing.Point(544, 144);
+            this.richDesc1.Location = new System.Drawing.Point(555, 293);
             this.richDesc1.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.richDesc1.Name = "richDesc1";
             this.richDesc1.Size = new System.Drawing.Size(285, 102);
             this.richDesc1.TabIndex = 37;
             this.richDesc1.Text = "";
+            this.richDesc1.TextChanged += new System.EventHandler(this.richDesc1_TextChanged);
             // 
             // label2
             // 
             this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(135, 106);
+            this.label2.Location = new System.Drawing.Point(135, 255);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(65, 20);
             this.label2.TabIndex = 36;
@@ -124,7 +129,7 @@
             // label1
             // 
             this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(138, 192);
+            this.label1.Location = new System.Drawing.Point(551, 92);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(88, 20);
             this.label1.TabIndex = 35;
@@ -132,7 +137,7 @@
             // 
             // dateStartBudget
             // 
-            this.dateStartBudget.Location = new System.Drawing.Point(138, 220);
+            this.dateStartBudget.Location = new System.Drawing.Point(555, 208);
             this.dateStartBudget.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.dateStartBudget.Name = "dateStartBudget";
             this.dateStartBudget.Size = new System.Drawing.Size(224, 26);
@@ -141,7 +146,7 @@
             // 
             // txtAmount
             // 
-            this.txtAmount.Location = new System.Drawing.Point(138, 130);
+            this.txtAmount.Location = new System.Drawing.Point(139, 284);
             this.txtAmount.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.txtAmount.Name = "txtAmount";
             this.txtAmount.Size = new System.Drawing.Size(224, 26);
@@ -149,7 +154,7 @@
             // 
             // textBox1
             // 
-            this.textBox1.Location = new System.Drawing.Point(142, 373);
+            this.textBox1.Location = new System.Drawing.Point(139, 208);
             this.textBox1.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.textBox1.Name = "textBox1";
             this.textBox1.Size = new System.Drawing.Size(224, 26);
@@ -159,7 +164,7 @@
             // txtCategory
             // 
             this.txtCategory.AutoSize = true;
-            this.txtCategory.Location = new System.Drawing.Point(138, 339);
+            this.txtCategory.Location = new System.Drawing.Point(135, 174);
             this.txtCategory.Name = "txtCategory";
             this.txtCategory.Size = new System.Drawing.Size(73, 20);
             this.txtCategory.TabIndex = 43;
@@ -167,7 +172,7 @@
             // 
             // dateEndBudget
             // 
-            this.dateEndBudget.Location = new System.Drawing.Point(142, 295);
+            this.dateEndBudget.Location = new System.Drawing.Point(555, 132);
             this.dateEndBudget.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.dateEndBudget.Name = "dateEndBudget";
             this.dateEndBudget.Size = new System.Drawing.Size(224, 26);
@@ -176,11 +181,29 @@
             // label3
             // 
             this.label3.AutoSize = true;
-            this.label3.Location = new System.Drawing.Point(138, 262);
+            this.label3.Location = new System.Drawing.Point(551, 174);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(82, 20);
             this.label3.TabIndex = 45;
             this.label3.Text = "End_Date";
+            // 
+            // label4
+            // 
+            this.label4.AutoSize = true;
+            this.label4.Location = new System.Drawing.Point(135, 92);
+            this.label4.Name = "label4";
+            this.label4.Size = new System.Drawing.Size(51, 20);
+            this.label4.TabIndex = 46;
+            this.label4.Text = "Name";
+            // 
+            // txtName
+            // 
+            this.txtName.Location = new System.Drawing.Point(139, 134);
+            this.txtName.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            this.txtName.Name = "txtName";
+            this.txtName.Size = new System.Drawing.Size(224, 26);
+            this.txtName.TabIndex = 47;
+            this.txtName.TextChanged += new System.EventHandler(this.txtName_TextChanged);
             // 
             // Budget
             // 
@@ -188,6 +211,8 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(900, 562);
             this.ControlBox = false;
+            this.Controls.Add(this.txtName);
+            this.Controls.Add(this.label4);
             this.Controls.Add(this.label3);
             this.Controls.Add(this.dateEndBudget);
             this.Controls.Add(this.txtCategory);
@@ -230,5 +255,7 @@
         private System.Windows.Forms.Label txtCategory;
         private System.Windows.Forms.DateTimePicker dateEndBudget;
         private System.Windows.Forms.Label label3;
+        private System.Windows.Forms.Label label4;
+        private System.Windows.Forms.TextBox txtName;
     }
 }

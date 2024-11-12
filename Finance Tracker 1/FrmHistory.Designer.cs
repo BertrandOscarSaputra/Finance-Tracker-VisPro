@@ -48,6 +48,7 @@
             // btnExit
             // 
             this.btnExit.BackColor = System.Drawing.Color.Firebrick;
+            this.btnExit.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnExit.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
             this.btnExit.Location = new System.Drawing.Point(1189, 41);
             this.btnExit.Name = "btnExit";

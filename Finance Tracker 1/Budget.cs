@@ -54,7 +54,7 @@ namespace Finance_Tracker_1
                         return;
                     }
 
-                    query = string.Format("INSERT into budgets  values ('{0}','{1}','{2}','{3}','{4}','{5}');", null, this.userId, txtCategory.Text, amount, dateStartBudget.Value.ToString("yyyy-MM-dd"), dateEndBudget.Value.ToString("yyyy-MM-dd"));
+                    query = string.Format("INSERT into budgets  values ('{0}','{1}','{2}','{3}','{4}','{5}','{6}','{7}');", null, this.userId,txtName.Text, txtCategory.Text, amount, dateStartBudget.Value.ToString("yyyy-MM-dd"), dateEndBudget.Value.ToString("yyyy-MM-dd"), richDesc1.Text);
 
 
                     koneksi.Open();
@@ -67,10 +67,11 @@ namespace Finance_Tracker_1
                         dateStartBudget.Value = DateTime.Now;
                         dateEndBudget.Value = DateTime.Now;
                         txtAmount.Text = "";
+                        txtName.Text = "";
                         richDesc1.Text = "";
+                        txtCategory.Text = "";
                         MessageBox.Show("Insert budget sukses ...");
-                        Budget_Load(null,null);
-                        
+                        Budget_Load(null, null);
                     }
                     else
                     {
@@ -94,6 +95,16 @@ namespace Finance_Tracker_1
         }
 
         private void dateStartBudget_ValueChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void richDesc1_TextChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void txtName_TextChanged(object sender, EventArgs e)
         {
 
         }

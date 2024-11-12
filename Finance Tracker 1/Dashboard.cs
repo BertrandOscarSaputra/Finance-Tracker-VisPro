@@ -138,6 +138,11 @@ namespace Finance_Tracker_1
             Dashboard_Load(null, null);
         }
 
+        private void linkLabel2_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
+        {
+
+        }
+
         private void dataGridView1_CellContentClick(object sender, DataGridViewCellEventArgs e)
         {
 
