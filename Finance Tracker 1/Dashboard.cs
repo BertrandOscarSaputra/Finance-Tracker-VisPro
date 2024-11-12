@@ -140,6 +140,8 @@ namespace Finance_Tracker_1
 
         private void linkLabel2_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
         {
+            FrmPay pay = new FrmPay(currentUserId);
+            pay.Show();
 
         }
 

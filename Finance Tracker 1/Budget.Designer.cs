@@ -39,7 +39,7 @@
             this.label1 = new System.Windows.Forms.Label();
             this.dateStartBudget = new System.Windows.Forms.DateTimePicker();
             this.txtAmount = new System.Windows.Forms.TextBox();
-            this.textBox1 = new System.Windows.Forms.TextBox();
+            this.txtCat = new System.Windows.Forms.TextBox();
             this.txtCategory = new System.Windows.Forms.Label();
             this.dateEndBudget = new System.Windows.Forms.DateTimePicker();
             this.label3 = new System.Windows.Forms.Label();
@@ -152,14 +152,14 @@
             this.txtAmount.Size = new System.Drawing.Size(224, 26);
             this.txtAmount.TabIndex = 33;
             // 
-            // textBox1
+            // txtCat
             // 
-            this.textBox1.Location = new System.Drawing.Point(139, 208);
-            this.textBox1.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
-            this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(224, 26);
-            this.textBox1.TabIndex = 42;
-            this.textBox1.TextChanged += new System.EventHandler(this.textBox1_TextChanged);
+            this.txtCat.Location = new System.Drawing.Point(139, 208);
+            this.txtCat.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            this.txtCat.Name = "txtCat";
+            this.txtCat.Size = new System.Drawing.Size(224, 26);
+            this.txtCat.TabIndex = 42;
+            this.txtCat.TextChanged += new System.EventHandler(this.textBox1_TextChanged);
             // 
             // txtCategory
             // 
@@ -216,7 +216,7 @@
             this.Controls.Add(this.label3);
             this.Controls.Add(this.dateEndBudget);
             this.Controls.Add(this.txtCategory);
-            this.Controls.Add(this.textBox1);
+            this.Controls.Add(this.txtCat);
             this.Controls.Add(this.buttonBack);
             this.Controls.Add(this.buttonSetBudget);
             this.Controls.Add(this.label6);
@@ -251,7 +251,7 @@
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.DateTimePicker dateStartBudget;
         private System.Windows.Forms.TextBox txtAmount;
-        private System.Windows.Forms.TextBox textBox1;
+        private System.Windows.Forms.TextBox txtCat;
         private System.Windows.Forms.Label txtCategory;
         private System.Windows.Forms.DateTimePicker dateEndBudget;
         private System.Windows.Forms.Label label3;
