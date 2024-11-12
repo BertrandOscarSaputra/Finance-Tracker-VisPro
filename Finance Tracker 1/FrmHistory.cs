@@ -20,10 +20,12 @@ namespace Finance_Tracker_1
 
         private DataSet ds = new DataSet();
         private string alamat, query;
-        public FrmHistory()
+        private int userId;
+        public FrmHistory(int userId)
         {
             alamat = "server=localhost; database=finance_tracker; username=root; password=;";
             koneksi = new MySqlConnection(alamat);
+            this.userId = userId;
             InitializeComponent();
         }
 
@@ -47,10 +49,11 @@ namespace Finance_Tracker_1
             try
             {
                 koneksi.Open();
-                query = string.Format("select * from transactions");
+                query = "SELECT * FROM transactions WHERE user_id = @userId";
                 perintah = new MySqlCommand(query, koneksi);
+                perintah.Parameters.AddWithValue("@userId", userId);
+
                 adapter = new MySqlDataAdapter(perintah);
-                perintah.ExecuteNonQuery();
                 ds.Clear();
                 adapter.Fill(ds);
                 koneksi.Close();

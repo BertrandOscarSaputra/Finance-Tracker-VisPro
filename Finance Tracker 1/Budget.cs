@@ -54,7 +54,6 @@ namespace Finance_Tracker_1
                         return;
                     }
 
-                    
                     query = string.Format("INSERT into budgets  values ('{0}','{1}','{2}','{3}','{4}','{5}');", null, this.userId, txtCategory.Text, amount, dateStartBudget.Value.ToString("yyyy-MM-dd"), dateEndBudget.Value.ToString("yyyy-MM-dd"));
 
 

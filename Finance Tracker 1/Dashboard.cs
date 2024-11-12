@@ -44,7 +44,7 @@ namespace Finance_Tracker_1
 
         private void button_transactionhistory_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
         {
-            FrmHistory history = new FrmHistory();
+            FrmHistory history = new FrmHistory(currentUserId);
             history.Show();
         }
 
@@ -81,16 +81,37 @@ namespace Finance_Tracker_1
             try
             {
                 koneksi.Open();
-                query = string.Format("select balance from users");
+                query = "SELECT username, balance FROM users WHERE user_id = @userId";
                 perintah = new MySqlCommand(query, koneksi);
+                perintah.Parameters.AddWithValue("@userId", currentUserId);
+
                 adapter = new MySqlDataAdapter(perintah);
                 perintah.ExecuteNonQuery();
                 ds.Clear();
                 adapter.Fill(ds);
                 koneksi.Close();
-                dataGridView2.DataSource = ds.Tables[0];
-                dataGridView2.Columns[0].Width = 100;
-                dataGridView2.Columns[0].HeaderText = "Balance";
+                DataTable balanceTable = ds.Tables[0].Clone();
+                DataTable nameTable = ds.Tables[0].Clone();
+
+                // Add only the balance column to balanceTable
+                balanceTable.Columns.Remove("username");
+                balanceTable.ImportRow(ds.Tables[0].Rows[0]);
+
+                // Add only the name column to nameTable
+                nameTable.Columns.Remove("balance");
+                nameTable.ImportRow(ds.Tables[0].Rows[0]);
+
+                // Set data sources for each DataGridView
+                dataGridView2.DataSource = balanceTable;
+                dataGridView2.Columns["balance"].Width = 50;
+                dataGridView2.RowHeadersVisible = false;
+                dataGridView2.ColumnHeadersVisible = false;
+
+                dataGridViewName.DataSource = nameTable;
+                dataGridViewName.Columns["username"].Width = 100;
+                dataGridViewName.RowHeadersVisible = false;
+                dataGridViewName.ColumnHeadersVisible = false;
+
 
 
             }
@@ -106,6 +127,11 @@ namespace Finance_Tracker_1
         }
 
         private void dataGridView2_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        {
+
+        }
+
+        private void dataGridViewName_CellContentClick(object sender, DataGridViewCellEventArgs e)
         {
 
         }
