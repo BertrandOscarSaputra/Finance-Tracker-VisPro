@@ -93,22 +93,19 @@ namespace Finance_Tracker_1
                 DataTable balanceTable = ds.Tables[0].Clone();
                 DataTable nameTable = ds.Tables[0].Clone();
 
-                // Add only the balance column to balanceTable
                 balanceTable.Columns.Remove("username");
                 balanceTable.ImportRow(ds.Tables[0].Rows[0]);
 
-                // Add only the name column to nameTable
                 nameTable.Columns.Remove("balance");
                 nameTable.ImportRow(ds.Tables[0].Rows[0]);
 
-                // Set data sources for each DataGridView
                 dataGridView2.DataSource = balanceTable;
                 dataGridView2.Columns["balance"].Width = 50;
                 dataGridView2.RowHeadersVisible = false;
                 dataGridView2.ColumnHeadersVisible = false;
 
                 dataGridViewName.DataSource = nameTable;
-                dataGridViewName.Columns["username"].Width = 100;
+                dataGridViewName.Columns["username"].Width = 90;
                 dataGridViewName.RowHeadersVisible = false;
                 dataGridViewName.ColumnHeadersVisible = false;
 
@@ -134,6 +131,11 @@ namespace Finance_Tracker_1
         private void dataGridViewName_CellContentClick(object sender, DataGridViewCellEventArgs e)
         {
 
+        }
+
+        private void btnRefresh_Click(object sender, EventArgs e)
+        {
+            Dashboard_Load(null, null);
         }
 
         private void dataGridView1_CellContentClick(object sender, DataGridViewCellEventArgs e)

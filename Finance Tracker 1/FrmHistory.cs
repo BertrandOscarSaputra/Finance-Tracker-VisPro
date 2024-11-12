@@ -70,6 +70,8 @@ namespace Finance_Tracker_1
                 dataGridView1.Columns[4].HeaderText = "Category";
                 dataGridView1.Columns[5].Width = 120;
                 dataGridView1.Columns[5].HeaderText = "Date";
+                dataGridView1.Columns[6].Width = 120;
+                dataGridView1.Columns[6].HeaderText = "Description";
 
             }
             catch (Exception ex)

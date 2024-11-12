@@ -64,6 +64,9 @@ namespace Finance_Tracker_1
                     koneksi.Close();
                     if (res == 1)
                     {
+                        dateStartBudget.Value = DateTime.Now;
+                        dateEndBudget.Value = DateTime.Now;
+                        txtAmount.Text = "";
                         MessageBox.Show("Insert budget sukses ...");
                         Budget_Load(null,null);
                         

@@ -108,9 +108,9 @@
             this.label2.AutoSize = true;
             this.label2.Location = new System.Drawing.Point(118, 264);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(126, 20);
+            this.label2.Size = new System.Drawing.Size(263, 20);
             this.label2.TabIndex = 14;
-            this.label2.Text = "Transaction type";
+            this.label2.Text = "Transaction Type (income, expense)";
             // 
             // label3
             // 
@@ -130,6 +130,7 @@
             this.richDesc.Size = new System.Drawing.Size(285, 102);
             this.richDesc.TabIndex = 18;
             this.richDesc.Text = "";
+            this.richDesc.TextChanged += new System.EventHandler(this.richDesc_TextChanged_1);
             // 
             // txtAmount
             // 

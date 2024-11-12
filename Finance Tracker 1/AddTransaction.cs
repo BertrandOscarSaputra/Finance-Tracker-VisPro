@@ -62,26 +62,80 @@ namespace Finance_Tracker_1
                     }
 
                     
-                    query = string.Format("INSERT into transactions  values ('{0}','{1}','{2}','{3}','{4}','{5}');",null,this.userId, txtType.Text, amount, txtCategory.Text, dateTransaction.Value.ToString("yyyy-MM-dd"));
-
-                    koneksi.Open();
+                    query = "SELECT balance FROM users WHERE user_id = @userId";
                     perintah = new MySqlCommand(query, koneksi);
-                    adapter = new MySqlDataAdapter(perintah);
-                    int res = perintah.ExecuteNonQuery();
+                    perintah.Parameters.AddWithValue("@userId", this.userId);
+                    koneksi.Open();
+                    object result = perintah.ExecuteScalar();
                     koneksi.Close();
-                    if (res == 1)
+
+                    if (result == null)
                     {
-                        MessageBox.Show("Transaksi Sukses ...");
-                        AddTransaction_Load(null, null);
+                        MessageBox.Show("User not found.");
+                        return;
+                    }
+
+                    int currentBalance = Convert.ToInt32(result);
+
+                    
+                    if (txtType.Text.ToLower() == "income")
+                    {
+                        currentBalance += amount;
+                    }
+                    else if (txtType.Text.ToLower() == "expense")
+                    {
+                        currentBalance -= amount;
                     }
                     else
                     {
-                        MessageBox.Show("Gagal insert transaksi . . . ");
+                        MessageBox.Show("Invalid transaction type. Use 'income' or 'expense'.");
+                        return;
+                    }
+
+                    query = "INSERT INTO transactions (user_id, type, amount, category, date, description) VALUES (@userId, @type, @amount, @category, @date, @description)";
+                    perintah = new MySqlCommand(query, koneksi);
+                    perintah.Parameters.AddWithValue("@userId", this.userId);
+                    perintah.Parameters.AddWithValue("@type", txtType.Text);
+                    perintah.Parameters.AddWithValue("@amount", amount);
+                    perintah.Parameters.AddWithValue("@category", txtCategory.Text);
+                    perintah.Parameters.AddWithValue("@date", dateTransaction.Value.ToString("yyyy-MM-dd"));
+                    perintah.Parameters.AddWithValue("@description",richDesc.Text);
+
+
+                    koneksi.Open();
+                    int res = perintah.ExecuteNonQuery();
+                    koneksi.Close();
+
+                   
+                    if (res == 1)
+                    {
+                        query = "UPDATE users SET balance = @balance WHERE user_id = @userId";
+                        perintah = new MySqlCommand(query, koneksi);
+                        perintah.Parameters.AddWithValue("@balance", currentBalance);
+                        perintah.Parameters.AddWithValue("@userId", this.userId);
+
+                        koneksi.Open();
+                        perintah.ExecuteNonQuery();
+                        koneksi.Close();
+
+                        txtType.Text = "";
+                        txtCategory.Text = "";
+                        txtAmount.Text = "";
+                        dateTransaction.Value = DateTime.Now;
+                        richDesc.Text = "";
+                        MessageBox.Show("Transaction Successful, balance updated.");
+                       
+                        AddTransaction_Load(null, null);
+
+                    }
+                    else
+                    {
+                        MessageBox.Show("Failed to insert transaction.");
                     }
                 }
                 else
                 {
-                    MessageBox.Show("Data Tidak lengkap !!");
+                    MessageBox.Show("Incomplete data!");
                 }
             }
             catch (Exception ex)
@@ -101,8 +155,12 @@ namespace Finance_Tracker_1
         {
 
         }
-
         private void label6_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void richDesc_TextChanged_1(object sender, EventArgs e)
         {
 
         }
