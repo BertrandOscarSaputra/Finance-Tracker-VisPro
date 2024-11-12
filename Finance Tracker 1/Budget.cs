@@ -67,6 +67,7 @@ namespace Finance_Tracker_1
                         dateStartBudget.Value = DateTime.Now;
                         dateEndBudget.Value = DateTime.Now;
                         txtAmount.Text = "";
+                        richDesc1.Text = "";
                         MessageBox.Show("Insert budget sukses ...");
                         Budget_Load(null,null);
                         

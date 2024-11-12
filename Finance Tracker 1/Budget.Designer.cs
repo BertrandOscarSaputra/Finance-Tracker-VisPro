@@ -33,9 +33,8 @@
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.buttonBack = new System.Windows.Forms.Button();
             this.buttonSetBudget = new System.Windows.Forms.Button();
-            this.label7 = new System.Windows.Forms.Label();
             this.label6 = new System.Windows.Forms.Label();
-            this.richTextBox1 = new System.Windows.Forms.RichTextBox();
+            this.richDesc1 = new System.Windows.Forms.RichTextBox();
             this.label2 = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
             this.dateStartBudget = new System.Windows.Forms.DateTimePicker();
@@ -95,17 +94,6 @@
             this.buttonSetBudget.UseVisualStyleBackColor = false;
             this.buttonSetBudget.Click += new System.EventHandler(this.buttonSetBudget_Click);
             // 
-            // label7
-            // 
-            this.label7.AutoSize = true;
-            this.label7.BackColor = System.Drawing.Color.Transparent;
-            this.label7.Font = new System.Drawing.Font("Microsoft Sans Serif", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label7.Location = new System.Drawing.Point(558, 52);
-            this.label7.Name = "label7";
-            this.label7.Size = new System.Drawing.Size(200, 32);
-            this.label7.TabIndex = 39;
-            this.label7.Text = "Your Balance: ";
-            // 
             // label6
             // 
             this.label6.AutoSize = true;
@@ -115,14 +103,14 @@
             this.label6.TabIndex = 38;
             this.label6.Text = "Description";
             // 
-            // richTextBox1
+            // richDesc1
             // 
-            this.richTextBox1.Location = new System.Drawing.Point(544, 144);
-            this.richTextBox1.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
-            this.richTextBox1.Name = "richTextBox1";
-            this.richTextBox1.Size = new System.Drawing.Size(285, 102);
-            this.richTextBox1.TabIndex = 37;
-            this.richTextBox1.Text = "";
+            this.richDesc1.Location = new System.Drawing.Point(544, 144);
+            this.richDesc1.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            this.richDesc1.Name = "richDesc1";
+            this.richDesc1.Size = new System.Drawing.Size(285, 102);
+            this.richDesc1.TabIndex = 37;
+            this.richDesc1.Text = "";
             // 
             // label2
             // 
@@ -206,9 +194,8 @@
             this.Controls.Add(this.textBox1);
             this.Controls.Add(this.buttonBack);
             this.Controls.Add(this.buttonSetBudget);
-            this.Controls.Add(this.label7);
             this.Controls.Add(this.label6);
-            this.Controls.Add(this.richTextBox1);
+            this.Controls.Add(this.richDesc1);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.dateStartBudget);
@@ -233,9 +220,8 @@
         private System.Windows.Forms.PictureBox pictureBox1;
         private System.Windows.Forms.Button buttonBack;
         private System.Windows.Forms.Button buttonSetBudget;
-        private System.Windows.Forms.Label label7;
         private System.Windows.Forms.Label label6;
-        private System.Windows.Forms.RichTextBox richTextBox1;
+        private System.Windows.Forms.RichTextBox richDesc1;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.DateTimePicker dateStartBudget;

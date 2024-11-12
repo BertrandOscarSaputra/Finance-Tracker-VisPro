@@ -41,7 +41,6 @@
             this.txtAmount = new System.Windows.Forms.TextBox();
             this.label4 = new System.Windows.Forms.Label();
             this.label6 = new System.Windows.Forms.Label();
-            this.label7 = new System.Windows.Forms.Label();
             this.buttonEnter = new System.Windows.Forms.Button();
             this.buttonBack = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
@@ -159,22 +158,11 @@
             this.label6.Text = "Description";
             this.label6.Click += new System.EventHandler(this.label6_Click);
             // 
-            // label7
-            // 
-            this.label7.AutoSize = true;
-            this.label7.BackColor = System.Drawing.Color.Transparent;
-            this.label7.Font = new System.Drawing.Font("Microsoft Sans Serif", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label7.Location = new System.Drawing.Point(78, 489);
-            this.label7.Name = "label7";
-            this.label7.Size = new System.Drawing.Size(200, 32);
-            this.label7.TabIndex = 22;
-            this.label7.Text = "Your Balance: ";
-            // 
             // buttonEnter
             // 
             this.buttonEnter.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(255)))), ((int)(((byte)(192)))));
             this.buttonEnter.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.buttonEnter.Location = new System.Drawing.Point(503, 489);
+            this.buttonEnter.Location = new System.Drawing.Point(281, 489);
             this.buttonEnter.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.buttonEnter.Name = "buttonEnter";
             this.buttonEnter.Size = new System.Drawing.Size(91, 49);
@@ -187,7 +175,7 @@
             // 
             this.buttonBack.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(192)))), ((int)(((byte)(192)))));
             this.buttonBack.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.buttonBack.Location = new System.Drawing.Point(698, 489);
+            this.buttonBack.Location = new System.Drawing.Point(497, 489);
             this.buttonBack.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.buttonBack.Name = "buttonBack";
             this.buttonBack.Size = new System.Drawing.Size(91, 49);
@@ -204,7 +192,6 @@
             this.ControlBox = false;
             this.Controls.Add(this.buttonBack);
             this.Controls.Add(this.buttonEnter);
-            this.Controls.Add(this.label7);
             this.Controls.Add(this.label6);
             this.Controls.Add(this.richDesc);
             this.Controls.Add(this.label4);
@@ -244,7 +231,6 @@
         private System.Windows.Forms.TextBox txtAmount;
         private System.Windows.Forms.Label label4;
         private System.Windows.Forms.Label label6;
-        private System.Windows.Forms.Label label7;
         private System.Windows.Forms.Button buttonEnter;
         private System.Windows.Forms.Button buttonBack;
     }
