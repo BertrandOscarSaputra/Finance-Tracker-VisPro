@@ -95,6 +95,11 @@ namespace Finance_Tracker_1
             this.Hide();
         }
 
+        private void label1_Click(object sender, EventArgs e)
+        {
+
+        }
+
         private void buttonexit_Click(object sender, EventArgs e)
         {
             Application.Exit();

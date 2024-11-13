@@ -164,6 +164,11 @@ namespace Finance_Tracker_1
             FrmPay_Load(null, null);
         }
 
+        private void txtName_TextChanged(object sender, EventArgs e)
+        {
+
+        }
+
         private void btnSearch_Click(object sender, EventArgs e)
         {
             string searchText = txtName.Text.Trim();

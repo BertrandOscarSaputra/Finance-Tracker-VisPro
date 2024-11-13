@@ -56,18 +56,21 @@
             // label1
             // 
             this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(312, 282);
+            this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label1.Location = new System.Drawing.Point(310, 268);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(83, 20);
+            this.label1.Size = new System.Drawing.Size(102, 25);
             this.label1.TabIndex = 1;
             this.label1.Text = "Username";
+            this.label1.Click += new System.EventHandler(this.label1_Click);
             // 
             // label2
             // 
             this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(308, 361);
+            this.label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label2.Location = new System.Drawing.Point(310, 356);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(78, 20);
+            this.label2.Size = new System.Drawing.Size(98, 25);
             this.label2.TabIndex = 2;
             this.label2.Text = "Password";
             // 
@@ -86,7 +89,7 @@
             // 
             this.txtPassword.BackColor = System.Drawing.Color.WhiteSmoke;
             this.txtPassword.ForeColor = System.Drawing.Color.Black;
-            this.txtPassword.Location = new System.Drawing.Point(312, 385);
+            this.txtPassword.Location = new System.Drawing.Point(312, 394);
             this.txtPassword.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.txtPassword.Name = "txtPassword";
             this.txtPassword.PasswordChar = '*';
@@ -129,10 +132,10 @@
             this.buttonexit.Cursor = System.Windows.Forms.Cursors.Hand;
             this.buttonexit.Font = new System.Drawing.Font("Microsoft Sans Serif", 8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.buttonexit.ForeColor = System.Drawing.Color.Snow;
-            this.buttonexit.Location = new System.Drawing.Point(782, 484);
+            this.buttonexit.Location = new System.Drawing.Point(767, 468);
             this.buttonexit.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.buttonexit.Name = "buttonexit";
-            this.buttonexit.Size = new System.Drawing.Size(91, 49);
+            this.buttonexit.Size = new System.Drawing.Size(106, 65);
             this.buttonexit.TabIndex = 7;
             this.buttonexit.Text = "Exit";
             this.buttonexit.UseVisualStyleBackColor = false;
