@@ -61,6 +61,7 @@
             // 
             // pictureBox1
             // 
+            this.pictureBox1.BackColor = System.Drawing.Color.PaleGreen;
             this.pictureBox1.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox1.Image")));
             this.pictureBox1.Location = new System.Drawing.Point(35, 20);
             this.pictureBox1.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
@@ -69,12 +70,14 @@
             this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.pictureBox1.TabIndex = 30;
             this.pictureBox1.TabStop = false;
+            this.pictureBox1.Click += new System.EventHandler(this.pictureBox1_Click);
             // 
             // buttonBack
             // 
-            this.buttonBack.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(192)))), ((int)(((byte)(192)))));
+            this.buttonBack.BackColor = System.Drawing.Color.IndianRed;
             this.buttonBack.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.buttonBack.Font = new System.Drawing.Font("Microsoft Sans Serif", 8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.buttonBack.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.buttonBack.ForeColor = System.Drawing.SystemColors.Control;
             this.buttonBack.Location = new System.Drawing.Point(343, 442);
             this.buttonBack.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.buttonBack.Name = "buttonBack";
@@ -86,9 +89,10 @@
             // 
             // buttonSetBudget
             // 
-            this.buttonSetBudget.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(128)))), ((int)(((byte)(255)))), ((int)(((byte)(128)))));
+            this.buttonSetBudget.BackColor = System.Drawing.Color.Lime;
             this.buttonSetBudget.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.buttonSetBudget.Font = new System.Drawing.Font("Microsoft Sans Serif", 8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.buttonSetBudget.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.buttonSetBudget.ForeColor = System.Drawing.SystemColors.Control;
             this.buttonSetBudget.Location = new System.Drawing.Point(139, 442);
             this.buttonSetBudget.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.buttonSetBudget.Name = "buttonSetBudget";

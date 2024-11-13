@@ -67,7 +67,7 @@
             // 
             this.lblPasswordAdmin.AutoSize = true;
             this.lblPasswordAdmin.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblPasswordAdmin.ForeColor = System.Drawing.Color.DarkCyan;
+            this.lblPasswordAdmin.ForeColor = System.Drawing.SystemColors.Control;
             this.lblPasswordAdmin.Location = new System.Drawing.Point(284, 173);
             this.lblPasswordAdmin.Name = "lblPasswordAdmin";
             this.lblPasswordAdmin.Size = new System.Drawing.Size(189, 29);
@@ -78,6 +78,8 @@
             // btnLoginAdmin
             // 
             this.btnLoginAdmin.BackColor = System.Drawing.Color.CadetBlue;
+            this.btnLoginAdmin.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btnLoginAdmin.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnLoginAdmin.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
             this.btnLoginAdmin.Location = new System.Drawing.Point(289, 299);
             this.btnLoginAdmin.Name = "btnLoginAdmin";
@@ -90,9 +92,9 @@
             // lblUserAdmin
             // 
             this.lblUserAdmin.AutoSize = true;
-            this.lblUserAdmin.BackColor = System.Drawing.SystemColors.Control;
+            this.lblUserAdmin.BackColor = System.Drawing.Color.RoyalBlue;
             this.lblUserAdmin.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblUserAdmin.ForeColor = System.Drawing.Color.DarkCyan;
+            this.lblUserAdmin.ForeColor = System.Drawing.SystemColors.Control;
             this.lblUserAdmin.Location = new System.Drawing.Point(280, 47);
             this.lblUserAdmin.Name = "lblUserAdmin";
             this.lblUserAdmin.Size = new System.Drawing.Size(193, 29);
@@ -112,6 +114,8 @@
             // button1
             // 
             this.button1.BackColor = System.Drawing.Color.Tomato;
+            this.button1.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.button1.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.button1.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
             this.button1.Location = new System.Drawing.Point(473, 299);
             this.button1.Name = "button1";
@@ -125,6 +129,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.BackColor = System.Drawing.Color.RoyalBlue;
             this.ClientSize = new System.Drawing.Size(678, 398);
             this.Controls.Add(this.button1);
             this.Controls.Add(this.txtUserAdmin);
@@ -136,6 +141,7 @@
             this.Name = "FrmAdmin";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "FrmAdmin";
+            this.Load += new System.EventHandler(this.FrmAdmin_Load);
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();

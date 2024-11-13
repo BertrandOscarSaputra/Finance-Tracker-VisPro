@@ -58,6 +58,7 @@
             // 
             // pictureBox1
             // 
+            this.pictureBox1.BackColor = System.Drawing.Color.PaleGreen;
             this.pictureBox1.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox1.Image")));
             this.pictureBox1.Location = new System.Drawing.Point(42, 45);
             this.pictureBox1.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
@@ -160,9 +161,10 @@
             // 
             // buttonEnter
             // 
-            this.buttonEnter.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(128)))), ((int)(((byte)(255)))), ((int)(((byte)(128)))));
+            this.buttonEnter.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(192)))), ((int)(((byte)(0)))));
             this.buttonEnter.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.buttonEnter.Font = new System.Drawing.Font("Microsoft Sans Serif", 8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.buttonEnter.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.buttonEnter.ForeColor = System.Drawing.SystemColors.Control;
             this.buttonEnter.Location = new System.Drawing.Point(298, 489);
             this.buttonEnter.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.buttonEnter.Name = "buttonEnter";
@@ -174,9 +176,10 @@
             // 
             // buttonBack
             // 
-            this.buttonBack.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(192)))), ((int)(((byte)(192)))));
+            this.buttonBack.BackColor = System.Drawing.Color.IndianRed;
             this.buttonBack.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.buttonBack.Font = new System.Drawing.Font("Microsoft Sans Serif", 8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.buttonBack.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.buttonBack.ForeColor = System.Drawing.SystemColors.Control;
             this.buttonBack.Location = new System.Drawing.Point(497, 489);
             this.buttonBack.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.buttonBack.Name = "buttonBack";

@@ -59,7 +59,7 @@
             this.pictureBox1.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.pictureBox1.Name = "pictureBox1";
             this.pictureBox1.Size = new System.Drawing.Size(578, 1093);
-            this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.pictureBox1.TabIndex = 0;
             this.pictureBox1.TabStop = false;
             this.pictureBox1.Click += new System.EventHandler(this.pictureBox1_Click);
@@ -92,11 +92,11 @@
             this.button_addtransaction.AutoSize = true;
             this.button_addtransaction.BackColor = System.Drawing.Color.Transparent;
             this.button_addtransaction.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.button_addtransaction.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.button_addtransaction.Font = new System.Drawing.Font("Microsoft Sans Serif", 13F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.button_addtransaction.LinkColor = System.Drawing.Color.FromArgb(((int)(((byte)(128)))), ((int)(((byte)(128)))), ((int)(((byte)(255)))));
-            this.button_addtransaction.Location = new System.Drawing.Point(36, 174);
+            this.button_addtransaction.Location = new System.Drawing.Point(12, 205);
             this.button_addtransaction.Name = "button_addtransaction";
-            this.button_addtransaction.Size = new System.Drawing.Size(208, 29);
+            this.button_addtransaction.Size = new System.Drawing.Size(221, 30);
             this.button_addtransaction.TabIndex = 3;
             this.button_addtransaction.TabStop = true;
             this.button_addtransaction.Text = "+ Add Transaction";
@@ -107,11 +107,11 @@
             this.button_transactionhistory.AutoSize = true;
             this.button_transactionhistory.BackColor = System.Drawing.Color.Transparent;
             this.button_transactionhistory.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.button_transactionhistory.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.button_transactionhistory.Font = new System.Drawing.Font("Microsoft Sans Serif", 13F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.button_transactionhistory.LinkColor = System.Drawing.Color.FromArgb(((int)(((byte)(128)))), ((int)(((byte)(128)))), ((int)(((byte)(255)))));
-            this.button_transactionhistory.Location = new System.Drawing.Point(36, 269);
+            this.button_transactionhistory.Location = new System.Drawing.Point(12, 343);
             this.button_transactionhistory.Name = "button_transactionhistory";
-            this.button_transactionhistory.Size = new System.Drawing.Size(219, 29);
+            this.button_transactionhistory.Size = new System.Drawing.Size(235, 30);
             this.button_transactionhistory.TabIndex = 4;
             this.button_transactionhistory.TabStop = true;
             this.button_transactionhistory.Text = "Transaction History";
@@ -120,13 +120,13 @@
             // linkLabel1
             // 
             this.linkLabel1.AutoSize = true;
-            this.linkLabel1.BackColor = System.Drawing.Color.Transparent;
+            this.linkLabel1.BackColor = System.Drawing.SystemColors.Control;
             this.linkLabel1.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.linkLabel1.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.linkLabel1.Font = new System.Drawing.Font("Microsoft Sans Serif", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.linkLabel1.LinkColor = System.Drawing.Color.FromArgb(((int)(((byte)(128)))), ((int)(((byte)(128)))), ((int)(((byte)(255)))));
-            this.linkLabel1.Location = new System.Drawing.Point(70, 356);
+            this.linkLabel1.Location = new System.Drawing.Point(41, 472);
             this.linkLabel1.Name = "linkLabel1";
-            this.linkLabel1.Size = new System.Drawing.Size(132, 29);
+            this.linkLabel1.Size = new System.Drawing.Size(155, 32);
             this.linkLabel1.TabIndex = 5;
             this.linkLabel1.TabStop = true;
             this.linkLabel1.Text = "Set Budget";
@@ -136,7 +136,7 @@
             // 
             this.btnLogOut.BackColor = System.Drawing.Color.Red;
             this.btnLogOut.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.btnLogOut.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnLogOut.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnLogOut.ForeColor = System.Drawing.Color.Snow;
             this.btnLogOut.Location = new System.Drawing.Point(41, 878);
             this.btnLogOut.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
@@ -172,11 +172,11 @@
             // label1
             // 
             this.label1.AutoSize = true;
-            this.label1.BackColor = System.Drawing.Color.Transparent;
-            this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 20F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label1.BackColor = System.Drawing.Color.PaleGreen;
+            this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 20F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label1.Location = new System.Drawing.Point(1002, 530);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(282, 46);
+            this.label1.Size = new System.Drawing.Size(296, 46);
             this.label1.TabIndex = 9;
             this.label1.Text = "Your Balance: ";
             // 
@@ -214,7 +214,7 @@
             // 
             this.btnRefresh.BackColor = System.Drawing.Color.DarkTurquoise;
             this.btnRefresh.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.btnRefresh.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnRefresh.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnRefresh.ForeColor = System.Drawing.Color.Snow;
             this.btnRefresh.Location = new System.Drawing.Point(1089, 673);
             this.btnRefresh.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
@@ -230,11 +230,11 @@
             this.linkLabel2.AutoSize = true;
             this.linkLabel2.BackColor = System.Drawing.Color.Transparent;
             this.linkLabel2.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.linkLabel2.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.linkLabel2.Font = new System.Drawing.Font("Microsoft Sans Serif", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.linkLabel2.LinkColor = System.Drawing.Color.FromArgb(((int)(((byte)(128)))), ((int)(((byte)(128)))), ((int)(((byte)(255)))));
-            this.linkLabel2.Location = new System.Drawing.Point(70, 454);
+            this.linkLabel2.Location = new System.Drawing.Point(41, 596);
             this.linkLabel2.Name = "linkLabel2";
-            this.linkLabel2.Size = new System.Drawing.Size(136, 29);
+            this.linkLabel2.Size = new System.Drawing.Size(161, 32);
             this.linkLabel2.TabIndex = 15;
             this.linkLabel2.TabStop = true;
             this.linkLabel2.Text = "Pay Budget";
