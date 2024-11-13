@@ -31,7 +31,7 @@ namespace Finance_Tracker_1
 
         private void dataGridView1_CellContentClick(object sender, DataGridViewCellEventArgs e)
         {
-
+             
         }
 
         private void btnExit_Click(object sender, EventArgs e)
@@ -60,17 +60,17 @@ namespace Finance_Tracker_1
                 dataGridView1.DataSource = ds.Tables[0];
                 dataGridView1.Columns[0].Width = 100;
                 dataGridView1.Columns[0].HeaderText = "Id";
-                dataGridView1.Columns[1].Width = 150;
+                dataGridView1.Columns[1].Width = 100;
                 dataGridView1.Columns[1].HeaderText = "User";
-                dataGridView1.Columns[2].Width = 120;
+                dataGridView1.Columns[2].Width = 150;
                 dataGridView1.Columns[2].HeaderText = "Type";
-                dataGridView1.Columns[3].Width = 120;
+                dataGridView1.Columns[3].Width = 200;
                 dataGridView1.Columns[3].HeaderText = "Amount";
-                dataGridView1.Columns[4].Width = 120;
+                dataGridView1.Columns[4].Width = 150;
                 dataGridView1.Columns[4].HeaderText = "Category";
-                dataGridView1.Columns[5].Width = 120;
+                dataGridView1.Columns[5].Width = 150;
                 dataGridView1.Columns[5].HeaderText = "Date";
-                dataGridView1.Columns[6].Width = 120;
+                dataGridView1.Columns[6].Width = 280;
                 dataGridView1.Columns[6].HeaderText = "Description";
 
             }
