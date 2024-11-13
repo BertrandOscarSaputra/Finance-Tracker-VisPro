@@ -32,6 +32,7 @@ namespace Finance_Tracker_1
         private void btnExit_Click(object sender, EventArgs e)
         {
             this.Hide();
+            
         }
 
         private void FrmPay_Load(object sender, EventArgs e)
@@ -153,6 +154,14 @@ namespace Finance_Tracker_1
         private void txtID_TextChanged(object sender, EventArgs e)
         {
 
+        }
+
+        private void button1_Click_1(object sender, EventArgs e)
+        {
+            txtName.Text = "";
+            txtID.Text = "";
+            txtPay.Text = "";
+            FrmPay_Load(null, null);
         }
 
         private void btnSearch_Click(object sender, EventArgs e)

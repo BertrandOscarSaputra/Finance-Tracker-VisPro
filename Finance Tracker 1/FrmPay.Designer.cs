@@ -41,6 +41,7 @@
             this.btnRefresh = new System.Windows.Forms.Button();
             this.txtID = new System.Windows.Forms.TextBox();
             this.label2 = new System.Windows.Forms.Label();
+            this.btnClear = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             this.SuspendLayout();
@@ -62,7 +63,7 @@
             this.btnSearch.Cursor = System.Windows.Forms.Cursors.Hand;
             this.btnSearch.Font = new System.Drawing.Font("Microsoft Sans Serif", 8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnSearch.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
-            this.btnSearch.Location = new System.Drawing.Point(409, 99);
+            this.btnSearch.Location = new System.Drawing.Point(409, 75);
             this.btnSearch.Name = "btnSearch";
             this.btnSearch.Size = new System.Drawing.Size(167, 56);
             this.btnSearch.TabIndex = 32;
@@ -122,7 +123,7 @@
             this.btnPay.Cursor = System.Windows.Forms.Cursors.Hand;
             this.btnPay.Font = new System.Drawing.Font("Microsoft Sans Serif", 8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnPay.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
-            this.btnPay.Location = new System.Drawing.Point(409, 251);
+            this.btnPay.Location = new System.Drawing.Point(409, 250);
             this.btnPay.Name = "btnPay";
             this.btnPay.Size = new System.Drawing.Size(167, 48);
             this.btnPay.TabIndex = 38;
@@ -172,12 +173,27 @@
             this.label2.TabIndex = 42;
             this.label2.Text = "Budget ID";
             // 
+            // btnClear
+            // 
+            this.btnClear.BackColor = System.Drawing.Color.DarkSlateGray;
+            this.btnClear.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btnClear.Font = new System.Drawing.Font("Microsoft Sans Serif", 8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnClear.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
+            this.btnClear.Location = new System.Drawing.Point(409, 164);
+            this.btnClear.Name = "btnClear";
+            this.btnClear.Size = new System.Drawing.Size(167, 48);
+            this.btnClear.TabIndex = 43;
+            this.btnClear.Text = "Clear";
+            this.btnClear.UseVisualStyleBackColor = false;
+            this.btnClear.Click += new System.EventHandler(this.button1_Click_1);
+            // 
             // FrmPay
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1898, 1024);
             this.ControlBox = false;
+            this.Controls.Add(this.btnClear);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.txtID);
             this.Controls.Add(this.btnRefresh);
@@ -217,5 +233,6 @@
         private System.Windows.Forms.Button btnRefresh;
         private System.Windows.Forms.TextBox txtID;
         private System.Windows.Forms.Label label2;
+        private System.Windows.Forms.Button btnClear;
     }
 }

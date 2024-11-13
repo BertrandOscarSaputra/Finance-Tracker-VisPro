@@ -149,6 +149,7 @@ namespace Finance_Tracker_1
         private void buttonBack_Click(object sender, EventArgs e)
         {
             this.Hide();
+            
         }
 
         private void dateTimePicker1_ValueChanged(object sender, EventArgs e)
