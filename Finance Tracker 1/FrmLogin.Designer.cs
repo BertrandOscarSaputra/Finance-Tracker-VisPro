@@ -117,7 +117,7 @@
             this.buttonclear.Cursor = System.Windows.Forms.Cursors.Hand;
             this.buttonclear.Font = new System.Drawing.Font("Microsoft Sans Serif", 8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.buttonclear.ForeColor = System.Drawing.SystemColors.Control;
-            this.buttonclear.Location = new System.Drawing.Point(467, 439);
+            this.buttonclear.Location = new System.Drawing.Point(480, 439);
             this.buttonclear.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.buttonclear.Name = "buttonclear";
             this.buttonclear.Size = new System.Drawing.Size(91, 49);

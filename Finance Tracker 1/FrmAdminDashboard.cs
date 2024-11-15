@@ -230,6 +230,13 @@ namespace Finance_Tracker_1
 
         }
 
+        private void btnPrint_Click(object sender, EventArgs e)
+        {
+            FrmPengguna pengguna = new FrmPengguna();
+            pengguna.Show();
+
+        }
+
         private void FrmAdminDashboard_Load(object sender, EventArgs e)
         {
             try
