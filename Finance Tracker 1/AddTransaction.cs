@@ -52,7 +52,7 @@ namespace Finance_Tracker_1
         {
             try
             {
-                if (txtType.Text != "" && txtCategory.Text != "" && txtAmount.Text != "")
+                if (cbTransaction.Text != "" && txtCategory.Text != "" && txtAmount.Text != "")
                 {
                     int amount;
                     if (!int.TryParse(txtAmount.Text, out amount))
@@ -78,11 +78,11 @@ namespace Finance_Tracker_1
                     int currentBalance = Convert.ToInt32(result);
 
                     
-                    if (txtType.Text.ToLower() == "income")
+                    if (cbTransaction.Text.ToLower() == "income")
                     {
                         currentBalance += amount;
                     }
-                    else if (txtType.Text.ToLower() == "expense")
+                    else if (cbTransaction.Text.ToLower() == "expense")
                     {
                         currentBalance -= amount;
                     }
@@ -95,7 +95,7 @@ namespace Finance_Tracker_1
                     query = "INSERT INTO transactions (user_id, type, amount, category, date, description) VALUES (@userId, @type, @amount, @category, @date, @description)";
                     perintah = new MySqlCommand(query, koneksi);
                     perintah.Parameters.AddWithValue("@userId", this.userId);
-                    perintah.Parameters.AddWithValue("@type", txtType.Text);
+                    perintah.Parameters.AddWithValue("@type", cbTransaction.Text);
                     perintah.Parameters.AddWithValue("@amount", amount);
                     perintah.Parameters.AddWithValue("@category", txtCategory.Text);
                     perintah.Parameters.AddWithValue("@date", dateTransaction.Value.ToString("yyyy-MM-dd"));
@@ -118,7 +118,7 @@ namespace Finance_Tracker_1
                         perintah.ExecuteNonQuery();
                         koneksi.Close();
 
-                        txtType.Text = "";
+                        cbTransaction.Text = "";
                         txtCategory.Text = "";
                         txtAmount.Text = "";
                         dateTransaction.Value = DateTime.Now;
@@ -162,6 +162,11 @@ namespace Finance_Tracker_1
         }
 
         private void richDesc_TextChanged_1(object sender, EventArgs e)
+        {
+
+        }
+
+        private void cbTransaction_SelectedIndexChanged(object sender, EventArgs e)
         {
 
         }

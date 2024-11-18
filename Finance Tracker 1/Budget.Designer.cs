@@ -144,7 +144,7 @@
             this.dateStartBudget.Location = new System.Drawing.Point(555, 208);
             this.dateStartBudget.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.dateStartBudget.Name = "dateStartBudget";
-            this.dateStartBudget.Size = new System.Drawing.Size(224, 26);
+            this.dateStartBudget.Size = new System.Drawing.Size(273, 26);
             this.dateStartBudget.TabIndex = 34;
             this.dateStartBudget.ValueChanged += new System.EventHandler(this.dateStartBudget_ValueChanged);
             // 
@@ -179,7 +179,7 @@
             this.dateEndBudget.Location = new System.Drawing.Point(555, 132);
             this.dateEndBudget.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.dateEndBudget.Name = "dateEndBudget";
-            this.dateEndBudget.Size = new System.Drawing.Size(224, 26);
+            this.dateEndBudget.Size = new System.Drawing.Size(273, 26);
             this.dateEndBudget.TabIndex = 44;
             // 
             // label3

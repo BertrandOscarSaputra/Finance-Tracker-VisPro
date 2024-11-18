@@ -31,7 +31,6 @@
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(AddTransaction));
             this.labeladdtransaction = new System.Windows.Forms.Label();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
-            this.txtType = new System.Windows.Forms.TextBox();
             this.dateTransaction = new System.Windows.Forms.DateTimePicker();
             this.txtCategory = new System.Windows.Forms.TextBox();
             this.label1 = new System.Windows.Forms.Label();
@@ -43,6 +42,7 @@
             this.label6 = new System.Windows.Forms.Label();
             this.buttonEnter = new System.Windows.Forms.Button();
             this.buttonBack = new System.Windows.Forms.Button();
+            this.cbTransaction = new System.Windows.Forms.ComboBox();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.SuspendLayout();
             // 
@@ -68,21 +68,12 @@
             this.pictureBox1.TabIndex = 9;
             this.pictureBox1.TabStop = false;
             // 
-            // txtType
-            // 
-            this.txtType.Location = new System.Drawing.Point(122, 288);
-            this.txtType.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
-            this.txtType.Name = "txtType";
-            this.txtType.Size = new System.Drawing.Size(224, 26);
-            this.txtType.TabIndex = 10;
-            this.txtType.TextChanged += new System.EventHandler(this.textBox1_TextChanged);
-            // 
             // dateTransaction
             // 
             this.dateTransaction.Location = new System.Drawing.Point(122, 192);
             this.dateTransaction.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.dateTransaction.Name = "dateTransaction";
-            this.dateTransaction.Size = new System.Drawing.Size(224, 26);
+            this.dateTransaction.Size = new System.Drawing.Size(278, 26);
             this.dateTransaction.TabIndex = 11;
             this.dateTransaction.ValueChanged += new System.EventHandler(this.dateTimePicker1_ValueChanged);
             // 
@@ -189,12 +180,25 @@
             this.buttonBack.UseVisualStyleBackColor = false;
             this.buttonBack.Click += new System.EventHandler(this.buttonBack_Click);
             // 
+            // cbTransaction
+            // 
+            this.cbTransaction.FormattingEnabled = true;
+            this.cbTransaction.Items.AddRange(new object[] {
+            "income",
+            "expense"});
+            this.cbTransaction.Location = new System.Drawing.Point(126, 306);
+            this.cbTransaction.Name = "cbTransaction";
+            this.cbTransaction.Size = new System.Drawing.Size(130, 28);
+            this.cbTransaction.TabIndex = 25;
+            this.cbTransaction.SelectedIndexChanged += new System.EventHandler(this.cbTransaction_SelectedIndexChanged);
+            // 
             // AddTransaction
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(914, 601);
             this.ControlBox = false;
+            this.Controls.Add(this.cbTransaction);
             this.Controls.Add(this.buttonBack);
             this.Controls.Add(this.buttonEnter);
             this.Controls.Add(this.label6);
@@ -206,7 +210,6 @@
             this.Controls.Add(this.label1);
             this.Controls.Add(this.txtCategory);
             this.Controls.Add(this.dateTransaction);
-            this.Controls.Add(this.txtType);
             this.Controls.Add(this.labeladdtransaction);
             this.Controls.Add(this.pictureBox1);
             this.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
@@ -226,7 +229,6 @@
 
         private System.Windows.Forms.Label labeladdtransaction;
         private System.Windows.Forms.PictureBox pictureBox1;
-        private System.Windows.Forms.TextBox txtType;
         private System.Windows.Forms.DateTimePicker dateTransaction;
         private System.Windows.Forms.TextBox txtCategory;
         private System.Windows.Forms.Label label1;
@@ -238,5 +240,6 @@
         private System.Windows.Forms.Label label6;
         private System.Windows.Forms.Button buttonEnter;
         private System.Windows.Forms.Button buttonBack;
+        private System.Windows.Forms.ComboBox cbTransaction;
     }
 }

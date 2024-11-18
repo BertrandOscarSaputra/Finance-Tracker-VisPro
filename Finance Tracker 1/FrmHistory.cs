@@ -44,6 +44,12 @@ namespace Finance_Tracker_1
 
         }
 
+        private void button1_Click(object sender, EventArgs e)
+        {
+            FrmUserTransactionReport reportForm = new FrmUserTransactionReport(userId);
+            reportForm.Show();
+        }
+
         private void FrmHistory_Load_1(object sender, EventArgs e)
         {
             try
