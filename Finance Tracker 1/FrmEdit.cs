@@ -93,18 +93,7 @@ namespace Finance_Tracker_1
 
                 if (dataGridView1.Rows.Count > 0)
                 {
-                    // Automatically select the first row
                     dataGridView1.Rows[0].Selected = true;
-
-                    // Fill in the input fields with data from the first row
-                    DataGridViewRow selectedRow = dataGridView1.Rows[0];
-                    txtID.Text = selectedRow.Cells["budget_id"].Value.ToString();
-                    txtName.Text = selectedRow.Cells["name"].Value.ToString();
-                    txtCategory.Text = selectedRow.Cells["category"].Value.ToString();
-                    txtAmount.Text = selectedRow.Cells["amount"].Value.ToString();
-                    dateStartBudget.Value = Convert.ToDateTime(selectedRow.Cells["start_date"].Value);
-                    dateEndBudget.Value = Convert.ToDateTime(selectedRow.Cells["end_date"].Value);
-                    richDesc.Text = selectedRow.Cells["description"].Value.ToString();
                 }
                 else
                 {
@@ -161,70 +150,7 @@ namespace Finance_Tracker_1
 
         private void btnUpdate_Click(object sender, EventArgs e)
         {
-            if (string.IsNullOrEmpty(txtID.Text))
-            {
-                MessageBox.Show("Please select a budget to update.");
-                return;
-            }
 
-            int budgetId;
-            if (!int.TryParse(txtID.Text, out budgetId))
-            {
-                MessageBox.Show("Invalid budget ID.");
-                return;
-            }
-
-            string name = txtName.Text.Trim();
-            string category = txtCategory.Text.Trim();
-            decimal amount;
-            if (!decimal.TryParse(txtAmount.Text, out amount) || amount < 0)
-            {
-                MessageBox.Show("Please enter a valid amount.");
-                return;
-            }
-
-            DateTime startDate = dateStartBudget.Value;
-            DateTime endDate = dateEndBudget.Value;
-            string description = richDesc.Text.Trim();
-
-            if (endDate < startDate)
-            {
-                MessageBox.Show("End date must be after start date.");
-                return;
-            }
-
-            try
-            {
-                koneksi.Open();
-                query = "UPDATE budgets SET name = @name, category = @category, amount = @amount, start_date = @startDate, end_date = @endDate, description = @description WHERE budget_id = @budgetId AND user_id = @userId";
-                perintah = new MySqlCommand(query, koneksi);
-
-                perintah.Parameters.AddWithValue("@name", name);
-                perintah.Parameters.AddWithValue("@category", category);
-                perintah.Parameters.AddWithValue("@amount", amount);
-                perintah.Parameters.AddWithValue("@startDate", startDate);
-                perintah.Parameters.AddWithValue("@endDate", endDate);
-                perintah.Parameters.AddWithValue("@description", description);
-                perintah.Parameters.AddWithValue("@budgetId", budgetId);
-                perintah.Parameters.AddWithValue("@userId", userId);
-
-                int rowsAffected = perintah.ExecuteNonQuery();
-                koneksi.Close();
-
-                if (rowsAffected > 0)
-                {
-                    MessageBox.Show("Budget updated successfully.");
-                    FrmEdit_Load(null, null);
-                }
-                else
-                {
-                    MessageBox.Show("Update failed. Please check the budget ID and try again.");
-                }
-            }
-            catch (Exception ex)
-            {
-                MessageBox.Show("Error: " + ex.Message);
-            }
         }
 
         private void FrmEdit_Load(object sender, EventArgs e)
