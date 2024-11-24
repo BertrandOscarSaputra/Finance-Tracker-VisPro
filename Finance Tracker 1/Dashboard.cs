@@ -145,6 +145,12 @@ namespace Finance_Tracker_1
 
         }
 
+        private void linkLabel3_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
+        {
+            ExHistory exHistory = new ExHistory(currentUserId);
+            exHistory.Show();
+        }
+
         private void dataGridView1_CellContentClick(object sender, DataGridViewCellEventArgs e)
         {
 

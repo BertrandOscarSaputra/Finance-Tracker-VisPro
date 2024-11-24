@@ -55,7 +55,7 @@ namespace Finance_Tracker_1
             try
             {
                 koneksi.Open();
-                query = "SELECT * FROM transactions WHERE user_id = @userId";
+                query = "SELECT Amount, Category, Date, Description FROM transactions WHERE type = 'income' AND user_id = @userId";
                 perintah = new MySqlCommand(query, koneksi);
                 perintah.Parameters.AddWithValue("@userId", userId);
 
@@ -64,20 +64,14 @@ namespace Finance_Tracker_1
                 adapter.Fill(ds);
                 koneksi.Close();
                 dataGridView1.DataSource = ds.Tables[0];
-                dataGridView1.Columns[0].Width = 100;
-                dataGridView1.Columns[0].HeaderText = "Id";
-                dataGridView1.Columns[1].Width = 100;
-                dataGridView1.Columns[1].HeaderText = "User";
+                dataGridView1.Columns[0].Width = 200;
+                dataGridView1.Columns[0].HeaderText = "Amount";
+                dataGridView1.Columns[1].Width = 150;
+                dataGridView1.Columns[1].HeaderText = "Category";
                 dataGridView1.Columns[2].Width = 150;
-                dataGridView1.Columns[2].HeaderText = "Type";
-                dataGridView1.Columns[3].Width = 200;
-                dataGridView1.Columns[3].HeaderText = "Amount";
-                dataGridView1.Columns[4].Width = 150;
-                dataGridView1.Columns[4].HeaderText = "Category";
-                dataGridView1.Columns[5].Width = 150;
-                dataGridView1.Columns[5].HeaderText = "Date";
-                dataGridView1.Columns[6].Width = 280;
-                dataGridView1.Columns[6].HeaderText = "Description";
+                dataGridView1.Columns[2].HeaderText = "Date";
+                dataGridView1.Columns[3].Width = 280;
+                dataGridView1.Columns[3].HeaderText = "Description";
 
             }
             catch (Exception ex)
