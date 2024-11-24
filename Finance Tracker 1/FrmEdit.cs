@@ -93,10 +93,8 @@ namespace Finance_Tracker_1
 
                 if (dataGridView1.Rows.Count > 0)
                 {
-                    // Automatically select the first row
                     dataGridView1.Rows[0].Selected = true;
 
-                    // Fill in the input fields with data from the first row
                     DataGridViewRow selectedRow = dataGridView1.Rows[0];
                     txtID.Text = selectedRow.Cells["budget_id"].Value.ToString();
                     txtName.Text = selectedRow.Cells["name"].Value.ToString();
@@ -167,7 +165,6 @@ namespace Finance_Tracker_1
                 return;
             }
 
-            // Retrieve values from input fields
             int budgetId;
             if (!int.TryParse(txtID.Text, out budgetId))
             {
@@ -188,7 +185,6 @@ namespace Finance_Tracker_1
             DateTime endDate = dateEndBudget.Value;
             string description = richDesc.Text.Trim();
 
-            // Ensure valid date range
             if (endDate < startDate)
             {
                 MessageBox.Show("End date must be after start date.");
@@ -197,12 +193,10 @@ namespace Finance_Tracker_1
 
             try
             {
-                // Prepare the update query
                 koneksi.Open();
                 query = "UPDATE budgets SET name = @name, category = @category, amount = @amount, start_date = @startDate, end_date = @endDate, description = @description WHERE budget_id = @budgetId AND user_id = @userId";
                 perintah = new MySqlCommand(query, koneksi);
 
-                // Bind parameters
                 perintah.Parameters.AddWithValue("@name", name);
                 perintah.Parameters.AddWithValue("@category", category);
                 perintah.Parameters.AddWithValue("@amount", amount);
@@ -212,15 +206,13 @@ namespace Finance_Tracker_1
                 perintah.Parameters.AddWithValue("@budgetId", budgetId);
                 perintah.Parameters.AddWithValue("@userId", userId);
 
-                // Execute the update command
                 int rowsAffected = perintah.ExecuteNonQuery();
                 koneksi.Close();
 
-                // Check if the update was successful
                 if (rowsAffected > 0)
                 {
                     MessageBox.Show("Budget updated successfully.");
-                    FrmEdit_Load(null, null); // Refresh DataGridView to show updated data
+                    FrmEdit_Load(null, null); 
                 }
                 else
                 {
