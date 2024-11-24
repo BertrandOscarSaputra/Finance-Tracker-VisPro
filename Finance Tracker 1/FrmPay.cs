@@ -237,7 +237,14 @@ namespace Finance_Tracker_1
 
                 if (dataGridView1.Rows.Count > 0)
                 {
+                    // Automatically select the first row
                     dataGridView1.Rows[0].Selected = true;
+
+                    // Fill in the input fields with data from the first row
+                    DataGridViewRow selectedRow = dataGridView1.Rows[0];
+                    txtID.Text = selectedRow.Cells["budget_id"].Value.ToString();
+                    txtName.Text = selectedRow.Cells["name"].Value.ToString();
+                    
                 }
                 else
                 {
