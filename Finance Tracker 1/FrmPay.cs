@@ -40,7 +40,7 @@ namespace Finance_Tracker_1
             try
             {
                 koneksi.Open();
-                query = "SELECT * FROM budgets WHERE user_id = @userId";
+                query = "SELECT budget_id,name,category,amount,start_date,end_date,description FROM budgets WHERE user_id = @userId";
                 perintah = new MySqlCommand(query, koneksi);
                 perintah.Parameters.AddWithValue("@userId", userId);
 
@@ -51,20 +51,18 @@ namespace Finance_Tracker_1
                 dataGridView1.DataSource = ds.Tables[0];
                 dataGridView1.Columns[0].Width = 75;
                 dataGridView1.Columns[0].HeaderText = "Id";
-                dataGridView1.Columns[1].Width = 75;
-                dataGridView1.Columns[1].HeaderText = "User";
-                dataGridView1.Columns[2].Width = 150;
-                dataGridView1.Columns[2].HeaderText = "Name";
+                dataGridView1.Columns[1].Width = 156;
+                dataGridView1.Columns[1].HeaderText = "Name";
+                dataGridView1.Columns[2].Width = 200;
+                dataGridView1.Columns[2].HeaderText = "Category";
                 dataGridView1.Columns[3].Width = 200;
-                dataGridView1.Columns[3].HeaderText = "Category";
-                dataGridView1.Columns[4].Width = 200;
-                dataGridView1.Columns[4].HeaderText = "Amount";
+                dataGridView1.Columns[3].HeaderText = "Amount";
+                dataGridView1.Columns[4].Width = 100;
+                dataGridView1.Columns[4].HeaderText = "Start_Date";
                 dataGridView1.Columns[5].Width = 100;
-                dataGridView1.Columns[5].HeaderText = "Start_Date";
-                dataGridView1.Columns[6].Width = 100;
-                dataGridView1.Columns[6].HeaderText = "End_Date";
-                dataGridView1.Columns[7].Width = 200;
-                dataGridView1.Columns[7].HeaderText = "description";
+                dataGridView1.Columns[5].HeaderText = "End_Date";
+                dataGridView1.Columns[6].Width = 235;
+                dataGridView1.Columns[6].HeaderText = "Description";
 
 
 
@@ -167,6 +165,38 @@ namespace Finance_Tracker_1
         private void txtName_TextChanged(object sender, EventArgs e)
         {
 
+        }
+
+        private void btnDelete_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                koneksi.Open();
+
+               
+                query = "DELETE FROM budgets WHERE amount = 0 AND user_id = @userId";
+                perintah = new MySqlCommand(query, koneksi);
+                perintah.Parameters.AddWithValue("@userId", userId);
+
+                
+                int rowsAffected = perintah.ExecuteNonQuery();
+                koneksi.Close();
+
+                
+                if (rowsAffected > 0)
+                {
+                    MessageBox.Show("Budgets with 0 amount have been deleted.");
+                    FrmPay_Load(null, null); 
+                }
+                else
+                {
+                    MessageBox.Show("No budgets with 0 amount found to delete.");
+                }
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("Error: " + ex.Message);
+            }
         }
 
         private void btnSearch_Click(object sender, EventArgs e)

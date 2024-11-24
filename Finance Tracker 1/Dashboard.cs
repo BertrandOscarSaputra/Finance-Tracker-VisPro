@@ -151,6 +151,12 @@ namespace Finance_Tracker_1
             exHistory.Show();
         }
 
+        private void linkLabel4_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
+        {
+            FrmEdit edit = new FrmEdit(currentUserId);
+            edit.Show();
+        }
+
         private void dataGridView1_CellContentClick(object sender, DataGridViewCellEventArgs e)
         {
 
