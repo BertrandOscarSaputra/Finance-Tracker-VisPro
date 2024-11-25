@@ -181,6 +181,12 @@ namespace Finance_Tracker_1
                 MessageBox.Show("Please enter a valid amount.");
                 return;
             }
+            decimal actualAmount;
+            if (!decimal.TryParse(txtActual.Text, out actualAmount) || actualAmount < 0)
+            {
+                MessageBox.Show("Please enter a valid actual amount.");
+                return;
+            }
 
             DateTime startDate = dateStartBudget.Value;
             DateTime endDate = dateEndBudget.Value;
@@ -194,13 +200,21 @@ namespace Finance_Tracker_1
 
             try
             {
-                koneksi.Open();
-                query = "UPDATE budgets SET name = @name, category = @category, amount = @amount, start_date = @startDate, end_date = @endDate, description = @description WHERE budget_id = @budgetId AND user_id = @userId";
+                // Check if the connection is already open
+                if (koneksi.State == ConnectionState.Open)
+                {
+                    koneksi.Close(); // Close the connection if it is already open
+                }
+
+                koneksi.Open(); // Open the connection
+
+                query = "UPDATE budgets SET name = @name, category = @category, amount = @amount, aktual = @actual, start_date = @startDate, end_date = @endDate, description = @description WHERE budget_id = @budgetId AND user_id = @userId";
                 perintah = new MySqlCommand(query, koneksi);
 
                 perintah.Parameters.AddWithValue("@name", name);
                 perintah.Parameters.AddWithValue("@category", category);
                 perintah.Parameters.AddWithValue("@amount", amount);
+                perintah.Parameters.AddWithValue("@actual", actualAmount); // Corrected to actualAmount
                 perintah.Parameters.AddWithValue("@startDate", startDate);
                 perintah.Parameters.AddWithValue("@endDate", endDate);
                 perintah.Parameters.AddWithValue("@description", description);
@@ -208,12 +222,12 @@ namespace Finance_Tracker_1
                 perintah.Parameters.AddWithValue("@userId", userId);
 
                 int rowsAffected = perintah.ExecuteNonQuery();
-                koneksi.Close();
 
+                // Check if rows were updated
                 if (rowsAffected > 0)
                 {
                     MessageBox.Show("Budget updated successfully.");
-                    FrmEdit_Load(null, null); 
+                    FrmEdit_Load(null, null); // Reload the data after successful update
                 }
                 else
                 {
@@ -223,6 +237,14 @@ namespace Finance_Tracker_1
             catch (Exception ex)
             {
                 MessageBox.Show("Error: " + ex.Message);
+            }
+            finally
+            {
+                // Ensure the connection is closed
+                if (koneksi.State == ConnectionState.Open)
+                {
+                    koneksi.Close();
+                }
             }
         }
 
