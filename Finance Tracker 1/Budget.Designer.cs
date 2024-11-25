@@ -39,12 +39,14 @@
             this.label1 = new System.Windows.Forms.Label();
             this.dateStartBudget = new System.Windows.Forms.DateTimePicker();
             this.txtAmount = new System.Windows.Forms.TextBox();
-            this.txtCat = new System.Windows.Forms.TextBox();
             this.txtCategory = new System.Windows.Forms.Label();
             this.dateEndBudget = new System.Windows.Forms.DateTimePicker();
             this.label3 = new System.Windows.Forms.Label();
             this.label4 = new System.Windows.Forms.Label();
             this.txtName = new System.Windows.Forms.TextBox();
+            this.cbCategory = new System.Windows.Forms.ComboBox();
+            this.label5 = new System.Windows.Forms.Label();
+            this.cbType = new System.Windows.Forms.ComboBox();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.SuspendLayout();
             // 
@@ -124,7 +126,7 @@
             // label2
             // 
             this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(135, 255);
+            this.label2.Location = new System.Drawing.Point(135, 355);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(65, 20);
             this.label2.TabIndex = 36;
@@ -150,25 +152,16 @@
             // 
             // txtAmount
             // 
-            this.txtAmount.Location = new System.Drawing.Point(139, 284);
+            this.txtAmount.Location = new System.Drawing.Point(139, 379);
             this.txtAmount.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.txtAmount.Name = "txtAmount";
             this.txtAmount.Size = new System.Drawing.Size(224, 26);
             this.txtAmount.TabIndex = 33;
             // 
-            // txtCat
-            // 
-            this.txtCat.Location = new System.Drawing.Point(139, 208);
-            this.txtCat.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
-            this.txtCat.Name = "txtCat";
-            this.txtCat.Size = new System.Drawing.Size(224, 26);
-            this.txtCat.TabIndex = 42;
-            this.txtCat.TextChanged += new System.EventHandler(this.textBox1_TextChanged);
-            // 
             // txtCategory
             // 
             this.txtCategory.AutoSize = true;
-            this.txtCategory.Location = new System.Drawing.Point(135, 174);
+            this.txtCategory.Location = new System.Drawing.Point(135, 255);
             this.txtCategory.Name = "txtCategory";
             this.txtCategory.Size = new System.Drawing.Size(73, 20);
             this.txtCategory.TabIndex = 43;
@@ -209,18 +202,60 @@
             this.txtName.TabIndex = 47;
             this.txtName.TextChanged += new System.EventHandler(this.txtName_TextChanged);
             // 
+            // cbCategory
+            // 
+            this.cbCategory.FormattingEnabled = true;
+            this.cbCategory.Items.AddRange(new object[] {
+            "Kredit Rumah",
+            "Kredit Kendaraan",
+            "Tabungan Pendidikan",
+            "Tabungan Bulanan",
+            "Pendidikan",
+            "Belanja Rumah Tangga",
+            "Transportasi",
+            "Tagihan Listrik",
+            "Tagihan Air",
+            "Lainnya"});
+            this.cbCategory.Location = new System.Drawing.Point(139, 293);
+            this.cbCategory.Name = "cbCategory";
+            this.cbCategory.Size = new System.Drawing.Size(224, 28);
+            this.cbCategory.TabIndex = 48;
+            // 
+            // label5
+            // 
+            this.label5.AutoSize = true;
+            this.label5.Location = new System.Drawing.Point(135, 174);
+            this.label5.Name = "label5";
+            this.label5.Size = new System.Drawing.Size(43, 20);
+            this.label5.TabIndex = 49;
+            this.label5.Text = "Type";
+            // 
+            // cbType
+            // 
+            this.cbType.FormattingEnabled = true;
+            this.cbType.Items.AddRange(new object[] {
+            "Hutang",
+            "Tabungan",
+            "Konsumsi Rutin Bulanan"});
+            this.cbType.Location = new System.Drawing.Point(139, 208);
+            this.cbType.Name = "cbType";
+            this.cbType.Size = new System.Drawing.Size(224, 28);
+            this.cbType.TabIndex = 50;
+            // 
             // Budget
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(900, 562);
             this.ControlBox = false;
+            this.Controls.Add(this.cbType);
+            this.Controls.Add(this.label5);
+            this.Controls.Add(this.cbCategory);
             this.Controls.Add(this.txtName);
             this.Controls.Add(this.label4);
             this.Controls.Add(this.label3);
             this.Controls.Add(this.dateEndBudget);
             this.Controls.Add(this.txtCategory);
-            this.Controls.Add(this.txtCat);
             this.Controls.Add(this.buttonBack);
             this.Controls.Add(this.buttonSetBudget);
             this.Controls.Add(this.label6);
@@ -255,11 +290,13 @@
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.DateTimePicker dateStartBudget;
         private System.Windows.Forms.TextBox txtAmount;
-        private System.Windows.Forms.TextBox txtCat;
         private System.Windows.Forms.Label txtCategory;
         private System.Windows.Forms.DateTimePicker dateEndBudget;
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.Label label4;
         private System.Windows.Forms.TextBox txtName;
+        private System.Windows.Forms.ComboBox cbCategory;
+        private System.Windows.Forms.Label label5;
+        private System.Windows.Forms.ComboBox cbType;
     }
 }

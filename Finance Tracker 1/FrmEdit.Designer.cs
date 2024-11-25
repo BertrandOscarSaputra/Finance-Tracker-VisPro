@@ -51,6 +51,8 @@
             this.btnUpdate = new System.Windows.Forms.Button();
             this.btnDelete = new System.Windows.Forms.Button();
             this.btnClear = new System.Windows.Forms.Button();
+            this.label8 = new System.Windows.Forms.Label();
+            this.txtActual = new System.Windows.Forms.TextBox();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             this.SuspendLayout();
@@ -73,7 +75,7 @@
             this.btnRefresh.Cursor = System.Windows.Forms.Cursors.Hand;
             this.btnRefresh.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnRefresh.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
-            this.btnRefresh.Location = new System.Drawing.Point(1438, 91);
+            this.btnRefresh.Location = new System.Drawing.Point(1648, 223);
             this.btnRefresh.Name = "btnRefresh";
             this.btnRefresh.Size = new System.Drawing.Size(149, 95);
             this.btnRefresh.TabIndex = 41;
@@ -136,7 +138,7 @@
             // label4
             // 
             this.label4.AutoSize = true;
-            this.label4.Location = new System.Drawing.Point(426, 78);
+            this.label4.Location = new System.Drawing.Point(402, 153);
             this.label4.Name = "label4";
             this.label4.Size = new System.Drawing.Size(65, 20);
             this.label4.TabIndex = 47;
@@ -145,7 +147,7 @@
             // label5
             // 
             this.label5.AutoSize = true;
-            this.label5.Location = new System.Drawing.Point(426, 153);
+            this.label5.Location = new System.Drawing.Point(705, 153);
             this.label5.Name = "label5";
             this.label5.Size = new System.Drawing.Size(88, 20);
             this.label5.TabIndex = 48;
@@ -154,7 +156,7 @@
             // label6
             // 
             this.label6.AutoSize = true;
-            this.label6.Location = new System.Drawing.Point(426, 242);
+            this.label6.Location = new System.Drawing.Point(705, 242);
             this.label6.Name = "label6";
             this.label6.Size = new System.Drawing.Size(82, 20);
             this.label6.TabIndex = 49;
@@ -163,7 +165,7 @@
             // label7
             // 
             this.label7.AutoSize = true;
-            this.label7.Location = new System.Drawing.Point(756, 78);
+            this.label7.Location = new System.Drawing.Point(1027, 100);
             this.label7.Name = "label7";
             this.label7.Size = new System.Drawing.Size(89, 20);
             this.label7.TabIndex = 50;
@@ -193,14 +195,15 @@
             // 
             // txtAmount
             // 
-            this.txtAmount.Location = new System.Drawing.Point(430, 115);
+            this.txtAmount.Location = new System.Drawing.Point(406, 198);
             this.txtAmount.Name = "txtAmount";
             this.txtAmount.Size = new System.Drawing.Size(207, 26);
             this.txtAmount.TabIndex = 54;
+            this.txtAmount.TextChanged += new System.EventHandler(this.txtAmount_TextChanged);
             // 
             // dateStartBudget
             // 
-            this.dateStartBudget.Location = new System.Drawing.Point(430, 196);
+            this.dateStartBudget.Location = new System.Drawing.Point(709, 196);
             this.dateStartBudget.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.dateStartBudget.Name = "dateStartBudget";
             this.dateStartBudget.Size = new System.Drawing.Size(273, 26);
@@ -208,7 +211,7 @@
             // 
             // dateEndBudget
             // 
-            this.dateEndBudget.Location = new System.Drawing.Point(430, 292);
+            this.dateEndBudget.Location = new System.Drawing.Point(709, 288);
             this.dateEndBudget.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.dateEndBudget.Name = "dateEndBudget";
             this.dateEndBudget.Size = new System.Drawing.Size(273, 26);
@@ -217,7 +220,7 @@
             // 
             // richDesc
             // 
-            this.richDesc.Location = new System.Drawing.Point(760, 115);
+            this.richDesc.Location = new System.Drawing.Point(1031, 137);
             this.richDesc.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.richDesc.Name = "richDesc";
             this.richDesc.Size = new System.Drawing.Size(285, 102);
@@ -230,7 +233,7 @@
             this.btnSearch.Cursor = System.Windows.Forms.Cursors.Hand;
             this.btnSearch.Font = new System.Drawing.Font("Microsoft Sans Serif", 8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnSearch.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
-            this.btnSearch.Location = new System.Drawing.Point(805, 266);
+            this.btnSearch.Location = new System.Drawing.Point(1087, 266);
             this.btnSearch.Name = "btnSearch";
             this.btnSearch.Size = new System.Drawing.Size(167, 56);
             this.btnSearch.TabIndex = 59;
@@ -244,7 +247,7 @@
             this.btnUpdate.Cursor = System.Windows.Forms.Cursors.Hand;
             this.btnUpdate.Font = new System.Drawing.Font("Microsoft Sans Serif", 8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnUpdate.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
-            this.btnUpdate.Location = new System.Drawing.Point(1109, 100);
+            this.btnUpdate.Location = new System.Drawing.Point(1375, 100);
             this.btnUpdate.Name = "btnUpdate";
             this.btnUpdate.Size = new System.Drawing.Size(167, 56);
             this.btnUpdate.TabIndex = 60;
@@ -258,7 +261,7 @@
             this.btnDelete.Cursor = System.Windows.Forms.Cursors.Hand;
             this.btnDelete.Font = new System.Drawing.Font("Microsoft Sans Serif", 8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnDelete.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
-            this.btnDelete.Location = new System.Drawing.Point(1109, 183);
+            this.btnDelete.Location = new System.Drawing.Point(1375, 183);
             this.btnDelete.Name = "btnDelete";
             this.btnDelete.Size = new System.Drawing.Size(167, 56);
             this.btnDelete.TabIndex = 61;
@@ -272,7 +275,7 @@
             this.btnClear.Cursor = System.Windows.Forms.Cursors.Hand;
             this.btnClear.Font = new System.Drawing.Font("Microsoft Sans Serif", 8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnClear.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
-            this.btnClear.Location = new System.Drawing.Point(1109, 270);
+            this.btnClear.Location = new System.Drawing.Point(1375, 266);
             this.btnClear.Name = "btnClear";
             this.btnClear.Size = new System.Drawing.Size(167, 48);
             this.btnClear.TabIndex = 62;
@@ -280,12 +283,30 @@
             this.btnClear.UseVisualStyleBackColor = false;
             this.btnClear.Click += new System.EventHandler(this.btnClear_Click);
             // 
+            // label8
+            // 
+            this.label8.AutoSize = true;
+            this.label8.Location = new System.Drawing.Point(402, 242);
+            this.label8.Name = "label8";
+            this.label8.Size = new System.Drawing.Size(54, 20);
+            this.label8.TabIndex = 63;
+            this.label8.Text = "Aktual";
+            // 
+            // txtActual
+            // 
+            this.txtActual.Location = new System.Drawing.Point(406, 292);
+            this.txtActual.Name = "txtActual";
+            this.txtActual.Size = new System.Drawing.Size(207, 26);
+            this.txtActual.TabIndex = 64;
+            // 
             // FrmEdit
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.Control;
             this.ClientSize = new System.Drawing.Size(1898, 1024);
+            this.Controls.Add(this.txtActual);
+            this.Controls.Add(this.label8);
             this.Controls.Add(this.btnClear);
             this.Controls.Add(this.btnDelete);
             this.Controls.Add(this.btnUpdate);
@@ -343,5 +364,7 @@
         private System.Windows.Forms.Button btnUpdate;
         private System.Windows.Forms.Button btnDelete;
         private System.Windows.Forms.Button btnClear;
+        private System.Windows.Forms.Label label8;
+        private System.Windows.Forms.TextBox txtActual;
     }
 }

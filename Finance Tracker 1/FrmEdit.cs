@@ -66,14 +66,14 @@ namespace Finance_Tracker_1
 
                 if (!string.IsNullOrEmpty(searchIdText) && int.TryParse(searchIdText, out int searchId))
                 {
-                    query = "SELECT * FROM budgets WHERE user_id = @userId AND budget_id = @searchId";
+                    query = "SELECT budget_id, name, category, amount, aktual, (amount - aktual) AS difference, start_date, end_date, description FROM budgets WHERE user_id = @userId AND budget_id = @searchId";
                     perintah = new MySqlCommand(query, koneksi);
                     perintah.Parameters.AddWithValue("@userId", userId);
                     perintah.Parameters.AddWithValue("@searchId", searchId);
                 }
                 else if (!string.IsNullOrEmpty(searchText))
                 {
-                    query = "SELECT * FROM budgets WHERE user_id = @userId AND name LIKE @searchText";
+                    query = "SELECT budget_id, name, category, amount, aktual, (amount - aktual) AS difference, start_date, end_date, description FROM budgets WHERE user_id = @userId AND name LIKE @searchText";
                     perintah = new MySqlCommand(query, koneksi);
                     perintah.Parameters.AddWithValue("@userId", userId);
                     perintah.Parameters.AddWithValue("@searchText", "%" + searchText + "%");
@@ -100,6 +100,7 @@ namespace Finance_Tracker_1
                     txtName.Text = selectedRow.Cells["name"].Value.ToString();
                     txtCategory.Text = selectedRow.Cells["category"].Value.ToString();
                     txtAmount.Text = selectedRow.Cells["amount"].Value.ToString();
+                    txtActual.Text = selectedRow.Cells["aktual"].Value.ToString();
                     dateStartBudget.Value = Convert.ToDateTime(selectedRow.Cells["start_date"].Value);
                     dateEndBudget.Value = Convert.ToDateTime(selectedRow.Cells["end_date"].Value);
                     richDesc.Text = selectedRow.Cells["description"].Value.ToString();
@@ -230,12 +231,17 @@ namespace Finance_Tracker_1
 
         }
 
+        private void txtAmount_TextChanged(object sender, EventArgs e)
+        {
+
+        }
+
         private void FrmEdit_Load(object sender, EventArgs e)
         {
             try
             {
                 koneksi.Open();
-                query = "SELECT budget_id,name,category,amount,start_date,end_date,description FROM budgets WHERE user_id = @userId";
+                query = "SELECT budget_id, name,type, category, amount, aktual,(amount - aktual) AS difference, start_date, end_date, description FROM budgets WHERE user_id = @userId";
                 perintah = new MySqlCommand(query, koneksi);
                 perintah.Parameters.AddWithValue("@userId", userId);
 
@@ -244,28 +250,34 @@ namespace Finance_Tracker_1
                 adapter.Fill(ds);
                 koneksi.Close();
                 dataGridView1.DataSource = ds.Tables[0];
-                dataGridView1.Columns[0].Width = 75;
-                dataGridView1.Columns[0].HeaderText = "Id";
-                dataGridView1.Columns[1].Width = 156;
+
+                // Adjust column widths to fit new difference column
+                dataGridView1.Columns[0].Width = 100;  // ID column width
+                dataGridView1.Columns[0].HeaderText = "Budget ID";
+                dataGridView1.Columns[1].Width = 100;  // Name column width
                 dataGridView1.Columns[1].HeaderText = "Name";
-                dataGridView1.Columns[2].Width = 200;
-                dataGridView1.Columns[2].HeaderText = "Category";
-                dataGridView1.Columns[3].Width = 200;
-                dataGridView1.Columns[3].HeaderText = "Amount";
-                dataGridView1.Columns[4].Width = 100;
-                dataGridView1.Columns[4].HeaderText = "Start_Date";
-                dataGridView1.Columns[5].Width = 100;
-                dataGridView1.Columns[5].HeaderText = "End_Date";
-                dataGridView1.Columns[6].Width = 235;
-                dataGridView1.Columns[6].HeaderText = "Description";
-
-
-
+                dataGridView1.Columns[2].Width = 150;  // Category column width
+                dataGridView1.Columns[2].HeaderText = "Type";
+                dataGridView1.Columns[3].Width = 100;  // Amount column width
+                dataGridView1.Columns[3].HeaderText = "Category";
+                dataGridView1.Columns[4].Width = 100;  // Actual column width
+                dataGridView1.Columns[4].HeaderText = "Amount";
+                dataGridView1.Columns[5].Width = 100;  // Start Date column width
+                dataGridView1.Columns[5].HeaderText = "Actual";
+                dataGridView1.Columns[6].Width = 100;  // End Date column width
+                dataGridView1.Columns[6].HeaderText = "Selisih";
+                dataGridView1.Columns[7].Width = 100;  // Description column width
+                dataGridView1.Columns[7].HeaderText = "start_date";
+                dataGridView1.Columns[8].Width = 100;  // Difference column width
+                dataGridView1.Columns[8].HeaderText = "end_date";
+                dataGridView1.Columns[9].Width = 120;  // Difference column width
+                dataGridView1.Columns[9].HeaderText = "Description";
             }
             catch (Exception ex)
             {
-                MessageBox.Show(ex.ToString());
+                MessageBox.Show("Error loading data: " + ex.Message);
             }
         }
+
     }
 }

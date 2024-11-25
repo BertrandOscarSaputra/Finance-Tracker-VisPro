@@ -32,7 +32,6 @@
             this.labeladdtransaction = new System.Windows.Forms.Label();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.dateTransaction = new System.Windows.Forms.DateTimePicker();
-            this.txtCategory = new System.Windows.Forms.TextBox();
             this.label1 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
@@ -43,6 +42,7 @@
             this.buttonEnter = new System.Windows.Forms.Button();
             this.buttonBack = new System.Windows.Forms.Button();
             this.cbTransaction = new System.Windows.Forms.ComboBox();
+            this.txtCategory = new System.Windows.Forms.TextBox();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.SuspendLayout();
             // 
@@ -76,14 +76,6 @@
             this.dateTransaction.Size = new System.Drawing.Size(278, 26);
             this.dateTransaction.TabIndex = 11;
             this.dateTransaction.ValueChanged += new System.EventHandler(this.dateTimePicker1_ValueChanged);
-            // 
-            // txtCategory
-            // 
-            this.txtCategory.Location = new System.Drawing.Point(122, 382);
-            this.txtCategory.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
-            this.txtCategory.Name = "txtCategory";
-            this.txtCategory.Size = new System.Drawing.Size(224, 26);
-            this.txtCategory.TabIndex = 12;
             // 
             // label1
             // 
@@ -188,9 +180,17 @@
             "expense"});
             this.cbTransaction.Location = new System.Drawing.Point(126, 306);
             this.cbTransaction.Name = "cbTransaction";
-            this.cbTransaction.Size = new System.Drawing.Size(130, 28);
+            this.cbTransaction.Size = new System.Drawing.Size(175, 28);
             this.cbTransaction.TabIndex = 25;
             this.cbTransaction.SelectedIndexChanged += new System.EventHandler(this.cbTransaction_SelectedIndexChanged);
+            // 
+            // txtCategory
+            // 
+            this.txtCategory.Location = new System.Drawing.Point(126, 402);
+            this.txtCategory.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            this.txtCategory.Name = "txtCategory";
+            this.txtCategory.Size = new System.Drawing.Size(175, 26);
+            this.txtCategory.TabIndex = 26;
             // 
             // AddTransaction
             // 
@@ -198,6 +198,7 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(914, 601);
             this.ControlBox = false;
+            this.Controls.Add(this.txtCategory);
             this.Controls.Add(this.cbTransaction);
             this.Controls.Add(this.buttonBack);
             this.Controls.Add(this.buttonEnter);
@@ -208,7 +209,6 @@
             this.Controls.Add(this.label3);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.label1);
-            this.Controls.Add(this.txtCategory);
             this.Controls.Add(this.dateTransaction);
             this.Controls.Add(this.labeladdtransaction);
             this.Controls.Add(this.pictureBox1);
@@ -230,7 +230,6 @@
         private System.Windows.Forms.Label labeladdtransaction;
         private System.Windows.Forms.PictureBox pictureBox1;
         private System.Windows.Forms.DateTimePicker dateTransaction;
-        private System.Windows.Forms.TextBox txtCategory;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Label label3;
@@ -241,5 +240,6 @@
         private System.Windows.Forms.Button buttonEnter;
         private System.Windows.Forms.Button buttonBack;
         private System.Windows.Forms.ComboBox cbTransaction;
+        private System.Windows.Forms.TextBox txtCategory;
     }
 }

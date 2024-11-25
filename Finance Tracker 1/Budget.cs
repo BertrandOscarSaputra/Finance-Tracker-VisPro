@@ -45,20 +45,32 @@ namespace Finance_Tracker_1
         {
             try
             {
-                if (txtAmount.Text != "" && dateStartBudget.Text != "" && txtCategory.Text != "")
+                if (txtAmount.Text != "" && dateStartBudget.Text != "" && cbCategory.Text != "")
                 {
                     int amount;
+                    int actualAmount = 0;
                     if (!int.TryParse(txtAmount.Text, out amount))
                     {
                         MessageBox.Show("Amount must be a valid integer.");
                         return;
                     }
 
-                    query = string.Format("INSERT into budgets  values ('{0}','{1}','{2}','{3}','{4}','{5}','{6}','{7}');", null, this.userId,txtName.Text, txtCat.Text, amount, dateStartBudget.Value.ToString("yyyy-MM-dd"), dateEndBudget.Value.ToString("yyyy-MM-dd"), richDesc1.Text);
+                    query = "INSERT INTO budgets (user_id, name, category, type, amount,aktual, start_date, end_date, description) " +
+                            "VALUES (@userId, @name, @category, @type, @amount, @actual, @startDate, @endDate, @description)";
+
+                    perintah = new MySqlCommand(query, koneksi);
+                    perintah.Parameters.AddWithValue("@userId", this.userId);
+                    perintah.Parameters.AddWithValue("@name", txtName.Text);
+                    perintah.Parameters.AddWithValue("@category", cbCategory.Text);
+                    perintah.Parameters.AddWithValue("@type", cbType.Text);
+                    perintah.Parameters.AddWithValue("@amount", amount);
+                    perintah.Parameters.AddWithValue("@actual", actualAmount);
+                    perintah.Parameters.AddWithValue("@startDate", dateStartBudget.Value.ToString("yyyy-MM-dd"));
+                    perintah.Parameters.AddWithValue("@endDate", dateEndBudget.Value.ToString("yyyy-MM-dd"));
+                    perintah.Parameters.AddWithValue("@description", richDesc1.Text);
 
 
                     koneksi.Open();
-                    perintah = new MySqlCommand(query, koneksi);
                     adapter = new MySqlDataAdapter(perintah);
                     int res = perintah.ExecuteNonQuery();
                     koneksi.Close();
